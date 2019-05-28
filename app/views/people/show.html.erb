@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+Subscribed events: <br/><br/>
+<% @person_events.each do |event| %>
+    name: <%= event.name%><br/>
+    date: <%= event.date%><br/>
+    <%= link_to "Show Event", event_path(event) %><br/>
+    <%= link_to "Unsubscribe", person_path(@person) + "/cancel?event_id=#{event.id}" %> <br/><br/>
+<% end %>
+
+
+Other events: <br/><br/>
+<%= form_with url: person_path(@person) + "/attend" do |f|%>
+	<%= f.select :event_id do %>
+	    <%= options_from_collection_for_select(@other_events, :id, :name) %>
+	<% end %>
+<%= f.submit "Attend" %>
+<% end %>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
