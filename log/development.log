@@ -491,3 +491,1241 @@ Processing by MonstersController#index as HTML
 Completed 200 OK in 146ms (Views: 141.9ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-05-28 17:38:52 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 16ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-28 17:48:51 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateStaffs (20190528144821)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateStaffs (20190528144821)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateStaffs (20190528145127)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateStaffs (20190528145207)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190528145207_create_staffs.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "staffs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "position" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190528145207_create_staffs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (13.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190528145207"]]
+  ↳ bin/rails:9
+  [1m[35m (79.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-05-28 17:52:40 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 13ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/staff" for 127.0.0.1 at 2019-05-28 17:52:43 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/staff"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 17:52:44 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 327ms (Views: 322.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 17:52:48 +0300
+Processing by StaffsController#new as HTML
+  Rendering staffs/new.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (41.9ms)
+  Rendered staffs/new.html.erb within layouts/application (43.5ms)
+Completed 200 OK in 83ms (Views: 68.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 17:52:54 +0300
+Processing by StaffsController#new as HTML
+  Rendering staffs/new.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (6.3ms)
+  Rendered staffs/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 17:53:07 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DlItSq+i84UGmRWmDfMwYQxmgsCFivN+HnzMHM0b21GLcgmHJzeOOOfVDkKnqynyhQ2TupcyEASh2/EzCtCe/Q==", "staff"=>{"name"=>"Toni Pelovski", "age"=>"31", "position"=>"cleaner"}, "commit"=>"Create Staff"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/staffs_controller.rb:30
+  [1m[36mStaff Create (0.6ms)[0m  [1m[32mINSERT INTO "staffs" ("name", "age", "position", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Toni Pelovski"], ["age", 31], ["position", "cleaner"], ["created_at", "2019-05-28 14:53:07.726123"], ["updated_at", "2019-05-28 14:53:07.726123"]]
+  ↳ app/controllers/staffs_controller.rb:30
+  [1m[35m (125.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/staffs_controller.rb:30
+Redirected to http://localhost:3000/staffs/1
+Completed 302 Found in 133ms (ActiveRecord: 126.1ms)
+
+
+Started GET "/staffs/1" for 127.0.0.1 at 2019-05-28 17:53:07 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:67
+  Rendering staffs/show.html.erb within layouts/application
+  Rendered staffs/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 62ms (Views: 54.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:03:24 +0300
+  
+LoadError (cannot load such file -- mysql):
+  
+app/controllers/staffs_controller.rb:1:in `<top (required)>'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:03:26 +0300
+  
+LoadError (cannot load such file -- mysql):
+  
+app/controllers/staffs_controller.rb:1:in `<top (required)>'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:04:09 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 40ms (Views: 36.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:04:14 +0300
+Processing by StaffsController#new as HTML
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant StaffsController::Mysql):
+  
+app/controllers/staffs_controller.rb:19:in `new'
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:05:30 +0300
+  
+LoadError (cannot load such file -- mysql2):
+  
+app/controllers/staffs_controller.rb:1:in `<top (required)>'
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:05:39 +0300
+  
+LoadError (cannot load such file -- mysqlite):
+  
+app/controllers/staffs_controller.rb:1:in `<top (required)>'
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:05:46 +0300
+  
+LoadError (cannot load such file -- sqlite):
+  
+app/controllers/staffs_controller.rb:1:in `<top (required)>'
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:13:34 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+LoadError (cannot load such file -- mysql2):
+  
+app/controllers/staffs_controller.rb:1:in `<top (required)>'
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:13:41 +0300
+  
+LoadError (cannot load such file -- mysql):
+  
+app/controllers/staffs_controller.rb:1:in `<top (required)>'
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:13:41 +0300
+  
+LoadError (cannot load such file -- mysql):
+  
+app/controllers/staffs_controller.rb:1:in `<top (required)>'
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:13:42 +0300
+  
+LoadError (cannot load such file -- mysql):
+  
+app/controllers/staffs_controller.rb:1:in `<top (required)>'
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:13:42 +0300
+  
+LoadError (cannot load such file -- mysql):
+  
+app/controllers/staffs_controller.rb:1:in `<top (required)>'
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:13:42 +0300
+  
+LoadError (cannot load such file -- mysql):
+  
+app/controllers/staffs_controller.rb:1:in `<top (required)>'
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:13:42 +0300
+  
+LoadError (cannot load such file -- mysql):
+  
+app/controllers/staffs_controller.rb:1:in `<top (required)>'
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:17:29 +0300
+  
+LoadError (cannot load such file -- mysql2):
+  
+app/controllers/staffs_controller.rb:1:in `<top (required)>'
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:20:01 +0300
+  
+SyntaxError (/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:28: syntax error, unexpected tCONSTANT, expecting keyword_end
+...aff(name, age, position) VALUES('Jack London', 31, 'writer')...
+...                         ^~~~~~):
+  
+app/controllers/staffs_controller.rb:28: syntax error, unexpected tCONSTANT, expecting keyword_end
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:24:33 +0300
+Processing by StaffsController#new as HTML
+  Rendering staffs/new.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (8.6ms)
+  Rendered staffs/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 298ms (Views: 281.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:25:00 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o5CeFKN+UqRHGlQXlbx1Auctvy/ZZCEBvRScL9sLDGGd+01QNlPXWORYixjkIamxgVYQ8bMZ1VRVLMhmBBz53w==", "staff"=>{"name"=>"Ala bala", "age"=>"56", "position"=>"eba4"}, "commit"=>"Create Staff"}
+No template found for StaffsController#create, rendering head :no_content
+Completed 204 No Content in 26ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:25:04 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:25:05 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:25:06 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:26:08 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 66ms (Views: 61.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:26:11 +0300
+Processing by StaffsController#new as HTML
+  Rendering staffs/new.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (4.5ms)
+  Rendered staffs/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 46ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:26:13 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0DZPJOHTQRhDfJ1EekQOiLfvnw9Ea054vL2J9cE9jcxVFmvpaUY8paIwhqDQHBcbPoSOdVbTrQIDGrTaBvbIYA==", "staff"=>{"name"=>"", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+No template found for StaffsController#create, rendering head :no_content
+Completed 204 No Content in 26ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:27:12 +0300
+  
+SyntaxError (/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:68: can't find string "SQL" anywhere before EOF
+/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:28: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+    query = <<-SQL 
+                  ^):
+  
+app/controllers/staffs_controller.rb:68: can't find string "SQL" anywhere before EOF
+app/controllers/staffs_controller.rb:28: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:28:22 +0300
+  
+SyntaxError (/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:68: can't find string "SQL" anywhere before EOF
+/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:28: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+    query = <<-SQL 
+                  ^):
+  
+app/controllers/staffs_controller.rb:68: can't find string "SQL" anywhere before EOF
+app/controllers/staffs_controller.rb:28: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:28:23 +0300
+  
+SyntaxError (/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:68: can't find string "SQL" anywhere before EOF
+/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:28: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+    query = <<-SQL 
+                  ^):
+  
+app/controllers/staffs_controller.rb:68: can't find string "SQL" anywhere before EOF
+app/controllers/staffs_controller.rb:28: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:28:25 +0300
+  
+SyntaxError (/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:68: can't find string "SQL" anywhere before EOF
+/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:28: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+    query = <<-SQL 
+                  ^):
+  
+app/controllers/staffs_controller.rb:68: can't find string "SQL" anywhere before EOF
+app/controllers/staffs_controller.rb:28: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:28:53 +0300
+  
+SyntaxError (/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:68: can't find string "SQL" anywhere before EOF
+/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:28: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+    query = <<-SQL 
+                  ^):
+  
+app/controllers/staffs_controller.rb:68: can't find string "SQL" anywhere before EOF
+app/controllers/staffs_controller.rb:28: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:28:54 +0300
+  
+SyntaxError (/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:68: can't find string "SQL" anywhere before EOF
+/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:28: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+    query = <<-SQL 
+                  ^):
+  
+app/controllers/staffs_controller.rb:68: can't find string "SQL" anywhere before EOF
+app/controllers/staffs_controller.rb:28: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:28:54 +0300
+  
+SyntaxError (/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:68: can't find string "SQL" anywhere before EOF
+/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:28: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+    query = <<-SQL 
+                  ^):
+  
+app/controllers/staffs_controller.rb:68: can't find string "SQL" anywhere before EOF
+app/controllers/staffs_controller.rb:28: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:29:54 +0300
+  
+SyntaxError (/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:28: syntax error, unexpected tCONSTANT, expecting keyword_end
+...aff(name, age, position) VALUES('Jack London', 31, 'writer')
+...                         ^~~~~~):
+  
+app/controllers/staffs_controller.rb:28: syntax error, unexpected tCONSTANT, expecting keyword_end
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:30:03 +0300
+Processing by StaffsController#new as HTML
+  Rendering staffs/new.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (3.4ms)
+  Rendered staffs/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 42ms (Views: 29.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:30:05 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IR6Gp7bhfEIWmVqxY2hKXKQzwMJiMQ0w9AoeVIKgs0gfdVXjI8z5vrXbhb4S9ZbvwkhvHAhM+WUcMkodXbdG9g==", "staff"=>{"name"=>"", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO Staff(name, age, position) VALUES('Jack London', 31, 'writer')[0m
+  ↳ app/controllers/staffs_controller.rb:29
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: Staff: INSERT INTO Staff(name, age, position) VALUES('Jack London', 31, 'writer')):
+  
+app/controllers/staffs_controller.rb:29:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:30:43 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IR6Gp7bhfEIWmVqxY2hKXKQzwMJiMQ0w9AoeVIKgs0gfdVXjI8z5vrXbhb4S9ZbvwkhvHAhM+WUcMkodXbdG9g==", "staff"=>{"name"=>"", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO staffs(name, age, position) VALUES('Jack London', 31, 'writer')[0m
+  ↳ app/controllers/staffs_controller.rb:29
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: staffs.created_at: INSERT INTO staffs(name, age, position) VALUES('Jack London', 31, 'writer')):
+  
+app/controllers/staffs_controller.rb:29:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:31:44 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IR6Gp7bhfEIWmVqxY2hKXKQzwMJiMQ0w9AoeVIKgs0gfdVXjI8z5vrXbhb4S9ZbvwkhvHAhM+WUcMkodXbdG9g==", "staff"=>{"name"=>"", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO staffs(id, name, age, position) VALUES(1, 'Jack London', 31, 'writer')[0m
+  ↳ app/controllers/staffs_controller.rb:29
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: staffs.created_at: INSERT INTO staffs(id, name, age, position) VALUES(1, 'Jack London', 31, 'writer')):
+  
+app/controllers/staffs_controller.rb:29:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:32:05 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IR6Gp7bhfEIWmVqxY2hKXKQzwMJiMQ0w9AoeVIKgs0gfdVXjI8z5vrXbhb4S9ZbvwkhvHAhM+WUcMkodXbdG9g==", "staff"=>{"name"=>"", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO staffs(name, age, position) VALUES('Jack London', 31, 'writer')[0m
+  ↳ app/controllers/staffs_controller.rb:29
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: staffs.created_at: INSERT INTO staffs(name, age, position) VALUES('Jack London', 31, 'writer')):
+  
+app/controllers/staffs_controller.rb:29:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:32:19 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IR6Gp7bhfEIWmVqxY2hKXKQzwMJiMQ0w9AoeVIKgs0gfdVXjI8z5vrXbhb4S9ZbvwkhvHAhM+WUcMkodXbdG9g==", "staff"=>{"name"=>"", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO staffs(name, age, position) VALUES('Jack London', 31, 'writer', '')[0m
+  ↳ app/controllers/staffs_controller.rb:29
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: 4 values for 3 columns: INSERT INTO staffs(name, age, position) VALUES('Jack London', 31, 'writer', '')):
+  
+app/controllers/staffs_controller.rb:29:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:32:31 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IR6Gp7bhfEIWmVqxY2hKXKQzwMJiMQ0w9AoeVIKgs0gfdVXjI8z5vrXbhb4S9ZbvwkhvHAhM+WUcMkodXbdG9g==", "staff"=>{"name"=>"", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO staffs(name, age, position) VALUES('Jack London', 31, 'writer')[0m
+  ↳ app/controllers/staffs_controller.rb:29
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: staffs.created_at: INSERT INTO staffs(name, age, position) VALUES('Jack London', 31, 'writer')):
+  
+app/controllers/staffs_controller.rb:29:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:36:57 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IR6Gp7bhfEIWmVqxY2hKXKQzwMJiMQ0w9AoeVIKgs0gfdVXjI8z5vrXbhb4S9ZbvwkhvHAhM+WUcMkodXbdG9g==", "staff"=>{"name"=>"", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO staffs(name, age, position, created_at) VALUES('Jack London', 31, 'writer', '')[0m
+  ↳ app/controllers/staffs_controller.rb:29
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: staffs.updated_at: INSERT INTO staffs(name, age, position, created_at) VALUES('Jack London', 31, 'writer', '')):
+  
+app/controllers/staffs_controller.rb:29:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:37:13 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IR6Gp7bhfEIWmVqxY2hKXKQzwMJiMQ0w9AoeVIKgs0gfdVXjI8z5vrXbhb4S9ZbvwkhvHAhM+WUcMkodXbdG9g==", "staff"=>{"name"=>"", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+  [1m[35m (74.8ms)[0m  [1m[32mINSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('Jack London', 31, 'writer', '', '')[0m
+  ↳ app/controllers/staffs_controller.rb:29
+No template found for StaffsController#create, rendering head :no_content
+Completed 204 No Content in 105ms (ActiveRecord: 74.8ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:37:17 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IR6Gp7bhfEIWmVqxY2hKXKQzwMJiMQ0w9AoeVIKgs0gfdVXjI8z5vrXbhb4S9ZbvwkhvHAhM+WUcMkodXbdG9g==", "staff"=>{"name"=>"", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+  [1m[35m (64.2ms)[0m  [1m[32mINSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('Jack London', 31, 'writer', '', '')[0m
+  ↳ app/controllers/staffs_controller.rb:29
+No template found for StaffsController#create, rendering head :no_content
+Completed 204 No Content in 94ms (ActiveRecord: 64.2ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:37:37 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IR6Gp7bhfEIWmVqxY2hKXKQzwMJiMQ0w9AoeVIKgs0gfdVXjI8z5vrXbhb4S9ZbvwkhvHAhM+WUcMkodXbdG9g==", "staff"=>{"name"=>"", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+  [1m[35m (57.0ms)[0m  [1m[32mINSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('Jack London', 31, 'writer', '', '')[0m
+  ↳ app/controllers/staffs_controller.rb:29
+No template found for StaffsController#create, rendering head :no_content
+Completed 204 No Content in 86ms (ActiveRecord: 57.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:37:55 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 49ms (Views: 41.4ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/staffs/2" for 127.0.0.1 at 2019-05-28 18:38:00 +0300
+Processing by StaffsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+U2eLJKUaUp3jmoLKI4BGAV3ZzEhnPr5Yzif8DfdzbvHJk1oB7nsttTMtQRZE92rYwzI70vhDqyLAMu56Mo4BQ==", "id"=>"2"}
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:59
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/staffs_controller.rb:49
+  [1m[36mStaff Destroy (0.5ms)[0m  [1m[31mDELETE FROM "staffs" WHERE "staffs"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/staffs_controller.rb:49
+  [1m[35m (54.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/staffs_controller.rb:49
+Redirected to http://localhost:3000/staffs
+Completed 302 Found in 68ms (ActiveRecord: 55.4ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:38:00 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 30ms (Views: 27.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/staffs/3" for 127.0.0.1 at 2019-05-28 18:38:03 +0300
+Processing by StaffsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ropcAV3wtBfvVHMDvjlkAsXH1yn33HoQDFrjmhSL6NaQ4Y9FyN0x60wWrAzPpLixo7x4952hjkXkYrfTy5wdaA==", "id"=>"3"}
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:59
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/staffs_controller.rb:49
+  [1m[36mStaff Destroy (0.4ms)[0m  [1m[31mDELETE FROM "staffs" WHERE "staffs"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/staffs_controller.rb:49
+  [1m[35m (66.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/staffs_controller.rb:49
+Redirected to http://localhost:3000/staffs
+Completed 302 Found in 73ms (ActiveRecord: 67.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:38:03 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:42:19 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 40ms (Views: 36.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:42:21 +0300
+Processing by StaffsController#new as HTML
+  Rendering staffs/new.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.8ms)
+  Rendered staffs/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:42:42 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e2PeKc+sWDXVA1rtiTnMLs7NgqqX07DrcQeZHrrWsS/+Q/rkRzkliDRPQQkjYdW9R6aT0IVrU5HOoKQxfR30gw==", "staff"=>{"name"=>"Pedal", "age"=>"40", "position"=>"chista4"}, "commit"=>"Create Staff"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `name' for #<ActionController::Parameters:0x00007f0a95416eb8>):
+  
+app/controllers/staffs_controller.rb:28:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:44:59 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e2PeKc+sWDXVA1rtiTnMLs7NgqqX07DrcQeZHrrWsS/+Q/rkRzkliDRPQQkjYdW9R6aT0IVrU5HOoKQxfR30gw==", "staff"=>{"name"=>"Pedal", "age"=>"40", "position"=>"chista4"}, "commit"=>"Create Staff"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/staffs_controller.rb:31:in `+'
+app/controllers/staffs_controller.rb:31:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:49:33 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e2PeKc+sWDXVA1rtiTnMLs7NgqqX07DrcQeZHrrWsS/+Q/rkRzkliDRPQQkjYdW9R6aT0IVrU5HOoKQxfR30gw==", "staff"=>{"name"=>"Pedal", "age"=>"40", "position"=>"chista4"}, "commit"=>"Create Staff"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/staffs_controller.rb:31:in `+'
+app/controllers/staffs_controller.rb:31:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:51:04 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e2PeKc+sWDXVA1rtiTnMLs7NgqqX07DrcQeZHrrWsS/+Q/rkRzkliDRPQQkjYdW9R6aT0IVrU5HOoKQxfR30gw==", "staff"=>{"name"=>"Pedal", "age"=>"40", "position"=>"chista4"}, "commit"=>"Create Staff"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of Integer into String):
+  
+app/controllers/staffs_controller.rb:31:in `+'
+app/controllers/staffs_controller.rb:31:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:52:46 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e2PeKc+sWDXVA1rtiTnMLs7NgqqX07DrcQeZHrrWsS/+Q/rkRzkliDRPQQkjYdW9R6aT0IVrU5HOoKQxfR30gw==", "staff"=>{"name"=>"Pedal", "age"=>"40", "position"=>"chista4"}, "commit"=>"Create Staff"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of Integer into String):
+  
+app/controllers/staffs_controller.rb:32:in `+'
+app/controllers/staffs_controller.rb:32:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:53:27 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e2PeKc+sWDXVA1rtiTnMLs7NgqqX07DrcQeZHrrWsS/+Q/rkRzkliDRPQQkjYdW9R6aT0IVrU5HOoKQxfR30gw==", "staff"=>{"name"=>"Pedal", "age"=>"40", "position"=>"chista4"}, "commit"=>"Create Staff"}
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO staffs(name, age, position, created_at, updated_at) VALUES(asfdas,223,fadsfaks, '', '')[0m
+  ↳ app/controllers/staffs_controller.rb:33
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: asfdas: INSERT INTO staffs(name, age, position, created_at, updated_at) VALUES(asfdas,223,fadsfaks, '', '')):
+  
+app/controllers/staffs_controller.rb:33:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:53:56 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e2PeKc+sWDXVA1rtiTnMLs7NgqqX07DrcQeZHrrWsS/+Q/rkRzkliDRPQQkjYdW9R6aT0IVrU5HOoKQxfR30gw==", "staff"=>{"name"=>"Pedal", "age"=>"40", "position"=>"chista4"}, "commit"=>"Create Staff"}
+  [1m[35m (65.4ms)[0m  [1m[32mINSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('asfdas',223,'fadsfaks', '', '')[0m
+  ↳ app/controllers/staffs_controller.rb:33
+No template found for StaffsController#create, rendering head :no_content
+Completed 204 No Content in 90ms (ActiveRecord: 65.4ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:54:00 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e2PeKc+sWDXVA1rtiTnMLs7NgqqX07DrcQeZHrrWsS/+Q/rkRzkliDRPQQkjYdW9R6aT0IVrU5HOoKQxfR30gw==", "staff"=>{"name"=>"Pedal", "age"=>"40", "position"=>"chista4"}, "commit"=>"Create Staff"}
+  [1m[35m (72.9ms)[0m  [1m[32mINSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('asfdas',223,'fadsfaks', '', '')[0m
+  ↳ app/controllers/staffs_controller.rb:33
+No template found for StaffsController#create, rendering head :no_content
+Completed 204 No Content in 102ms (ActiveRecord: 72.9ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:54:03 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e2PeKc+sWDXVA1rtiTnMLs7NgqqX07DrcQeZHrrWsS/+Q/rkRzkliDRPQQkjYdW9R6aT0IVrU5HOoKQxfR30gw==", "staff"=>{"name"=>"Pedal", "age"=>"40", "position"=>"chista4"}, "commit"=>"Create Staff"}
+  [1m[35m (154.2ms)[0m  [1m[32mINSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('asfdas',223,'fadsfaks', '', '')[0m
+  ↳ app/controllers/staffs_controller.rb:33
+No template found for StaffsController#create, rendering head :no_content
+Completed 204 No Content in 181ms (ActiveRecord: 154.2ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:54:04 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 65ms (Views: 38.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:55:56 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 46ms (Views: 41.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:55:58 +0300
+Processing by StaffsController#new as HTML
+  Rendering staffs/new.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (5.3ms)
+  Rendered staffs/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:55:59 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yRytrcrxf/AqUjjV7RXJb9jKPwpAK8OHzcdd2PI+MKVMPIlgQmQCTcseIzFHTdD8UaEucFKTIP1yYGD3NfV1CQ==", "staff"=>{"name"=>"", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/staffs_controller.rb:31:in `+'
+app/controllers/staffs_controller.rb:31:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:56:05 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yRytrcrxf/AqUjjV7RXJb9jKPwpAK8OHzcdd2PI+MKVMPIlgQmQCTcseIzFHTdD8UaEucFKTIP1yYGD3NfV1CQ==", "staff"=>{"name"=>"sdgd", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/staffs_controller.rb:31:in `+'
+app/controllers/staffs_controller.rb:31:in `create'
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:56:45 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yRytrcrxf/AqUjjV7RXJb9jKPwpAK8OHzcdd2PI+MKVMPIlgQmQCTcseIzFHTdD8UaEucFKTIP1yYGD3NfV1CQ==", "staff"=>{"name"=>"sdgd", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+  [1m[35m (63.9ms)[0m  [1m[32mINSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('sdgd',223,'fadsfaks', '', '')[0m
+  ↳ app/controllers/staffs_controller.rb:32
+No template found for StaffsController#create, rendering head :no_content
+Completed 204 No Content in 93ms (ActiveRecord: 63.9ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:58:03 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yRytrcrxf/AqUjjV7RXJb9jKPwpAK8OHzcdd2PI+MKVMPIlgQmQCTcseIzFHTdD8UaEucFKTIP1yYGD3NfV1CQ==", "staff"=>{"name"=>"sdgd", "age"=>"", "position"=>""}, "commit"=>"Create Staff"}
+  [1m[35m (61.6ms)[0m  [1m[32mINSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('sdgd',223,'fadsfaks', '', '')[0m
+  ↳ app/controllers/staffs_controller.rb:32
+No template found for StaffsController#create, rendering head :no_content
+Completed 204 No Content in 87ms (ActiveRecord: 61.6ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:58:08 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.7ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 64ms (Views: 51.1ms | ActiveRecord: 3.8ms)
+
+
+Started DELETE "/staffs/9" for 127.0.0.1 at 2019-05-28 18:58:11 +0300
+Processing by StaffsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9Pf5fiPi8EgZvjuEb/IoP58qRffDU4nkUYJbXS/v9pvKnCo6ts91tLr85Iseb/SM+VHqKakufbG5ug8U8PgDJQ==", "id"=>"9"}
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:62
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/staffs_controller.rb:52
+  [1m[36mStaff Destroy (1.0ms)[0m  [1m[31mDELETE FROM "staffs" WHERE "staffs"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/staffs_controller.rb:52
+  [1m[35m (68.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/staffs_controller.rb:52
+Redirected to http://localhost:3000/staffs
+Completed 302 Found in 78ms (ActiveRecord: 69.8ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:58:11 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/staffs/7" for 127.0.0.1 at 2019-05-28 18:58:51 +0300
+Processing by StaffsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cQoGr1jAqUOaHM7nLSsUJzEIaJxGgXUNm9aupHE4uR5PYdXrze0svzleEehctsiUV3PHQiz8gVhz7vrtri9MoA==", "id"=>"7"}
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:62
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/staffs_controller.rb:52
+  [1m[36mStaff Destroy (0.4ms)[0m  [1m[31mDELETE FROM "staffs" WHERE "staffs"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/staffs_controller.rb:52
+  [1m[35m (53.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/staffs_controller.rb:52
+Redirected to http://localhost:3000/staffs
+Completed 302 Found in 73ms (ActiveRecord: 55.5ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:58:51 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/new" for 127.0.0.1 at 2019-05-28 18:58:54 +0300
+Processing by StaffsController#new as HTML
+  Rendering staffs/new.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (4.0ms)
+  Rendered staffs/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2019-05-28 18:59:08 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uinDG1sTxNxuE9SzL9LHnyE3QRDGu04PIEQ6I5zC9/Y/CefW04a5YY9fz1eFit4MqFxQatQDrXWf4wcMWwmyWg==", "staff"=>{"name"=>"Gosho", "age"=>"25", "position"=>"CEO"}, "commit"=>"Create Staff"}
+  [1m[35m (150.6ms)[0m  [1m[32mINSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('Gosho',25,'CEO', '', '')[0m
+  ↳ app/controllers/staffs_controller.rb:32
+No template found for StaffsController#create, rendering head :no_content
+Completed 204 No Content in 182ms (ActiveRecord: 150.6ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:59:11 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 50ms (Views: 48.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/staffs/8" for 127.0.0.1 at 2019-05-28 18:59:50 +0300
+Processing by StaffsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wkOmURR4obZrq2aEfBbxW9ZMqLRnETbQJm0SIRf+mWX8KHUVgVUkSsjpuYsNiy3osDcHag1swoXOVUZoyOls2w==", "id"=>"8"}
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:62
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/staffs_controller.rb:52
+  [1m[36mStaff Destroy (0.4ms)[0m  [1m[31mDELETE FROM "staffs" WHERE "staffs"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/staffs_controller.rb:52
+  [1m[35m (94.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/staffs_controller.rb:52
+Redirected to http://localhost:3000/staffs
+Completed 302 Found in 101ms (ActiveRecord: 94.8ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 18:59:50 +0300
+Processing by StaffsController#index as HTML
+  Rendering staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/views/staffs/index.html.erb:16
+  Rendered staffs/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:03:47 +0300
+Processing by StaffsController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:9
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<SQLite3::ResultSet::HashWithTypesAndFields:0x0000559470e04db8>):
+    15:   <tbody>
+    16:     <% @staffs.each do |staff| %>
+    17:       <tr>
+    18:         <td><%= staff.name %></td>
+    19:         <td><%= staff.age %></td>
+    20:         <td><%= staff.position %></td>
+    21:         <td><%= link_to 'Show', staff %></td>
+  
+app/views/staffs/index.html.erb:18:in `block in _app_views_staffs_index_html_erb___2962400744438661433_47048018529280'
+app/views/staffs/index.html.erb:16:in `each'
+app/views/staffs/index.html.erb:16:in `_app_views_staffs_index_html_erb___2962400744438661433_47048018529280'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:04:53 +0300
+Processing by StaffsController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:9
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+NameError (uninitialized constant StaffsController::Model):
+  
+app/controllers/staffs_controller.rb:10:in `index'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:05:57 +0300
+Processing by StaffsController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:9
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `find_by_sql' for StaffsController:Class):
+  
+app/controllers/staffs_controller.rb:10:in `index'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:08:13 +0300
+Processing by StaffsController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:9
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (uninitialized constant StaffsController::Model):
+  
+app/controllers/staffs_controller.rb:10:in `index'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:11:41 +0300
+  
+SyntaxError (/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:11: syntax error, unexpected ')', expecting ']'
+...', row['age'], row['position']) 
+...                              ^):
+  
+app/controllers/staffs_controller.rb:11: syntax error, unexpected ')', expecting ']'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:12:04 +0300
+  
+SyntaxError (/home/theking/subd/SCPProject/app/controllers/staffs_controller.rb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+        puts obj.name
+        ^~~~):
+  
+app/controllers/staffs_controller.rb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:12:32 +0300
+Processing by StaffsController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:9
+Completed 500 Internal Server Error in 222ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `results' for #<StaffsController:0x00007f0a95381278>
+Did you mean?  result):
+  
+app/controllers/staffs_controller.rb:10:in `index'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:12:44 +0300
+Processing by StaffsController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:9
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (uninitialized constant StaffsController::Model):
+  
+app/controllers/staffs_controller.rb:11:in `block in index'
+app/controllers/staffs_controller.rb:10:in `each'
+app/controllers/staffs_controller.rb:10:in `index'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:13:23 +0300
+Processing by StaffsController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:9
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0..1)):
+  
+app/controllers/staffs_controller.rb:11:in `block in index'
+app/controllers/staffs_controller.rb:10:in `each'
+app/controllers/staffs_controller.rb:10:in `index'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:15:52 +0300
+Processing by StaffsController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:9
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `sql' for #<StaffsController:0x00007f0a881677b0>):
+  
+app/controllers/staffs_controller.rb:10:in `index'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:16:01 +0300
+Processing by StaffsController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:9
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+TypeError (no implicit conversion of SQLite3::ResultSet::HashWithTypesAndFields into String):
+  
+app/controllers/staffs_controller.rb:10:in `index'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:16:29 +0300
+Processing by StaffsController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:9
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:10
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13:   </thead>
+    14: 
+    15:   <tbody>
+    16:     <% @staffs.each do |staff| %>
+    17:       <tr>
+    18:         <td><%= staff.name %></td>
+    19:         <td><%= staff.age %></td>
+  
+app/views/staffs/index.html.erb:16:in `_app_views_staffs_index_html_erb___2962400744438661433_69841608018380'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:18:51 +0300
+Processing by StaffsController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:9
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13:   </thead>
+    14: 
+    15:   <tbody>
+    16:     <% @staffs.each do |staff| %>
+    17:       <tr>
+    18:         <td><%= staff.name %></td>
+    19:         <td><%= staff.age %></td>
+  
+app/views/staffs/index.html.erb:16:in `_app_views_staffs_index_html_erb___2962400744438661433_69841687915380'
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:19:10 +0300
+Processing by StaffsController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:9
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:11
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 40ms (Views: 27.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs/1/edit" for 127.0.0.1 at 2019-05-28 19:19:36 +0300
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:63
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (4.1ms)
+  Rendered staffs/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 46ms (Views: 31.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/staffs/1/edit" for 127.0.0.1 at 2019-05-28 19:24:10 +0300
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:60
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (6.5ms)
+  Rendered staffs/edit.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 70ms (Views: 47.6ms | ActiveRecord: 1.9ms)
+
+
+Started PATCH "/staffs/1" for 127.0.0.1 at 2019-05-28 19:24:16 +0300
+Processing by StaffsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nvRUPNXHGoJucjU6x+q+Zrx1XOlYsfLfiPs+6f2gXRygn4d4QOqffs0w6jW2d2LV2g7zNzLMBopgw2qgIreoog==", "staff"=>{"name"=>"Toni Pelovski", "age"=>"12311", "position"=>"cleaner"}, "commit"=>"Update Staff", "id"=>"1"}
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:60
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/staffs_controller.rb:43:in `+'
+app/controllers/staffs_controller.rb:43:in `update'
+Started PATCH "/staffs/1" for 127.0.0.1 at 2019-05-28 19:30:36 +0300
+Processing by StaffsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nvRUPNXHGoJucjU6x+q+Zrx1XOlYsfLfiPs+6f2gXRygn4d4QOqffs0w6jW2d2LV2g7zNzLMBopgw2qgIreoog==", "staff"=>{"name"=>"Toni Pelovski", "age"=>"12311", "position"=>"cleaner"}, "commit"=>"Update Staff", "id"=>"1"}
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:60
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/staffs_controller.rb:43:in `+'
+app/controllers/staffs_controller.rb:43:in `update'
+Started GET "/staffs/1/edit" for 127.0.0.1 at 2019-05-28 19:30:39 +0300
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:60
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for :@staff:Symbol):
+    11:     <%= f.label :position %>
+    12:     <%= f.text_field :position %>
+    13: 
+    14:     <%= f.hidden_field :@staff.id %>
+    15:     <%= hidden_field_tag 'selected', 'none'  %>
+    16: 
+    17:     <%= f.submit 'Continue', class: 'button' %>
+  
+app/views/staffs/edit.html.erb:14:in `block in _app_views_staffs_edit_html_erb___2696284522804552751_69841607565520'
+app/views/staffs/edit.html.erb:3:in `_app_views_staffs_edit_html_erb___2696284522804552751_69841607565520'
+Started GET "/staffs/1/edit" for 127.0.0.1 at 2019-05-28 19:32:03 +0300
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:60
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 47ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/staffs/1/edit" for 127.0.0.1 at 2019-05-28 19:32:05 +0300
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:60
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 37ms (Views: 33.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs/1/edit" for 127.0.0.1 at 2019-05-28 19:32:41 +0300
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:60
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 43ms (Views: 27.5ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/staffs/1" for 127.0.0.1 at 2019-05-28 19:32:43 +0300
+Processing by StaffsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XjYiZXqt6rHpkSJtXZeuS2CekzpHxhLbZA36W4pLvplgXfEh74BvTUrT/WIsCnL4BuU85C275o6MNa4SVVxLJw==", "staff"=>{"name"=>"Toni Pelovski", "age"=>"12311", "position"=>"cleaner", "original_name"=>"Toni Pelovski"}, "selected"=>"none", "commit"=>"Continue", "id"=>"1"}
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:60
+  [1m[35m (0.9ms)[0m  [1m[33mUPDATE staffs SET name='Toni Pelovski', age=12311,position='cleaner' WHERE name = Toni Pelovski;[0m
+  ↳ app/controllers/staffs_controller.rb:44
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "Pelovski": syntax error: UPDATE staffs SET name='Toni Pelovski', age=12311,position='cleaner' WHERE name = Toni Pelovski;):
+  
+app/controllers/staffs_controller.rb:44:in `update'
+Started PATCH "/staffs/1" for 127.0.0.1 at 2019-05-28 19:33:03 +0300
+Processing by StaffsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XjYiZXqt6rHpkSJtXZeuS2CekzpHxhLbZA36W4pLvplgXfEh74BvTUrT/WIsCnL4BuU85C275o6MNa4SVVxLJw==", "staff"=>{"name"=>"Toni Pelovski", "age"=>"12311", "position"=>"cleaner", "original_name"=>"Toni Pelovski"}, "selected"=>"none", "commit"=>"Continue", "id"=>"1"}
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:60
+  [1m[35m (82.3ms)[0m  [1m[33mUPDATE staffs SET name='Toni Pelovski', age=12311,position='cleaner' WHERE name = 'Toni Pelovski';[0m
+  ↳ app/controllers/staffs_controller.rb:44
+No template found for StaffsController#update, rendering head :no_content
+Completed 204 No Content in 127ms (ActiveRecord: 83.4ms)
+
+
+Started GET "/staffs/1/edit" for 127.0.0.1 at 2019-05-28 19:33:10 +0300
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:60
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/staffs/1" for 127.0.0.1 at 2019-05-28 19:33:12 +0300
+Processing by StaffsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"937Gwra/ueeDuEXh5NkOit7XHj2XOrQN2V509gv3/nBEZmP4+tVdSmQm9P3trWQkkhxyS7FZqG3PovKbbIifRg==", "staff"=>{"name"=>"Toni Pelovski", "age"=>"12311", "position"=>"cleaner", "original_name"=>"Toni Pelovski"}, "selected"=>"none", "commit"=>"Continue", "id"=>"1"}
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:60
+  [1m[35m (88.2ms)[0m  [1m[33mUPDATE staffs SET name='Toni Pelovski', age=12311,position='cleaner' WHERE name = 'Toni Pelovski';[0m
+  ↳ app/controllers/staffs_controller.rb:44
+No template found for StaffsController#update, rendering head :no_content
+Completed 204 No Content in 121ms (ActiveRecord: 88.4ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:33:14 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:9
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 43ms (Views: 40.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/staffs/4/edit" for 127.0.0.1 at 2019-05-28 19:33:17 +0300
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:60
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 38ms (Views: 35.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/staffs/4" for 127.0.0.1 at 2019-05-28 19:33:23 +0300
+Processing by StaffsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XAr94d6DywbPc6Vy+r7S5mDa1vNHmiJlPvlGEAaqszBa+fohYTSegfVNsgeRO22hQGdpqJBSMN/ZPlKdlVL2nQ==", "staff"=>{"name"=>"Jack jacl", "age"=>"13", "position"=>"writer", "original_name"=>"Jack London"}, "selected"=>"none", "commit"=>"Continue", "id"=>"4"}
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:60
+  [1m[35m (233.8ms)[0m  [1m[33mUPDATE staffs SET name='Jack jacl', age=13,position='writer' WHERE name = 'Jack London';[0m
+  ↳ app/controllers/staffs_controller.rb:44
+No template found for StaffsController#update, rendering head :no_content
+Completed 204 No Content in 262ms (ActiveRecord: 234.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-05-28 19:33:25 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT * FROM staffs[0m
+  ↳ app/controllers/staffs_controller.rb:9
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 51ms (Views: 46.9ms | ActiveRecord: 0.6ms)
+
+

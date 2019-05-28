@@ -1,0 +1,21 @@
+<h1>Editing Staff</h1>
+
+<%= form_for @staff do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+
+    <%= f.hidden_field :original_name, value:@staff.name %>
+    <%= hidden_field_tag 'selected', 'none'  %>
+
+    <%= f.submit 'Continue', class: 'button' %>
+<% end %>
+
+<%= link_to 'Show', @staff %> |
+<%= link_to 'Back', staffs_path %>
