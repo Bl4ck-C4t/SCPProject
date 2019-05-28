@@ -1,0 +1,2 @@
+class Scp < ApplicationRecord
+end

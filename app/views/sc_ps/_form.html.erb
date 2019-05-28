@@ -1,0 +1,17 @@
+<%= form_with(model: scp, local: true) do |form| %>
+  <% if scp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(scp.errors.count, "error") %> prohibited this scp from being saved:</h2>
+
+      <ul>
+      <% scp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
