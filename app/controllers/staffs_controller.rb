@@ -31,6 +31,7 @@ class StaffsController < ApplicationController
     position = params[:staff][:position]
     query = "INSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('" + name +  "',"+ age +",'"+ position +"', '', '')"
     result = ActiveRecord::Base.connection.execute(query)
+    redirect_to 'staffs#index'
   end
 
   # PATCH/PUT /staffs/1
@@ -42,12 +43,15 @@ class StaffsController < ApplicationController
     position = params[:staff][:position]
     query = "UPDATE staffs SET name='" + name +  "', age="+ age +",position='"+ position +"' WHERE name = '" + original_name +"';"
     result = ActiveRecord::Base.connection.execute(query)
+
   end
 
   # DELETE /staffs/1
   # DELETE /staffs/1.json
   def destroy
-    @staff.destroy
+    id = @staff.id
+    query = "DELETE FROM staffs WHERE id = " + id.to_s() +";"
+    result = ActiveRecord::Base.connection.execute(query)
     respond_to do |format|
       format.html { redirect_to staffs_url, notice: 'Staff was successfully destroyed.' }
       format.json { head :no_content }
