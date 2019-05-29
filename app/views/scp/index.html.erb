@@ -1,11 +1,14 @@
 <tbody>
-    <% @scps.each do |scp| %>
-      <tr>
-      	<%= scp["Name"] %>
-        <td><%= link_to 'Show ', controller: "scp", action: "show", id: scp["Id"] %></td>
-        <td><%= link_to 'Edit', controller: "scp", action: "update", id: scp["Id"] %></td>
-        <td><%= link_to 'Destroy', controller: "scp", action: "destroy", id: scp["Id"] %></td>
-      </tr>
-      <br>
-    <% end %>
-  </tbody>
+<% @scps.each do |scp| %>
+  <tr>
+  	<%= scp["Name"] %>
+    <td><%= link_to 'Show', controller: "scp", action: "show", id: scp["Id"] %></td>
+    <td><%= link_to 'Edit', controller: "scp", action: "update", id: scp["Id"] %></td>
+    <td><%= link_to 'Destroy', controller: "scp", action: "destroy", id: scp["Id"] %></td>
+  </tr>
+  <br>
+<% end %>
+</tbody>
+
+<br>
+<%= link_to 'New SCP', controller: "scp", action: "create" %>

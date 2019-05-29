@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'scp', to: 'scp#index'
   get 'scp/show'
   get 'scp/create'
+  post 'scp/new'
   get 'scp/update'
   get 'scp/destroy'
 
