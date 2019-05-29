@@ -4,6 +4,7 @@ class ScpController < ApplicationController
     @scps = ActiveRecord::Base.connection.execute(query)
   end
 
+
   def show
     id = params[:id]
 
@@ -30,10 +31,15 @@ class ScpController < ApplicationController
 
     vals = [[nil, name], [nil, description], [nil, clearance_level], [nil, anomaly_class]]
 
-    ActiveRecord::Base.connection.exec_insert(query, "show", vals)
-
-    redirect_to controller: "scp", action: "index"
+    begin
+      ActiveRecord::Base.connection.exec_insert(query, "create", vals)
+      redirect_to controller: "scp", action: "index"
+    rescue ActiveRecord::NotNullViolation => e
+      redirect_to controller: "scp", action: "create"
+    end
+    
   end
+
 
   def create
     clearance_query = "SELECT Level, Name FROM SecurityClearance;"
@@ -46,6 +52,14 @@ class ScpController < ApplicationController
   def update
   end
 
+
   def destroy
+    id = params[:id]
+
+    query = "DELETE FROM SCP WHERE Id = ?;"
+    vals = [[nil, id]]
+    ActiveRecord::Base.connection.exec_insert(query, "destroy", vals)
+
+    redirect_to controller: "scp", action: "index"
   end
 end
