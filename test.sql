@@ -38,12 +38,13 @@ INSERT INTO SecurityClearance(Level, Name) Values(5, 'Top-Secret');
 INSERT INTO SecurityClearance(Level, Name) Values(6, 'Thaumiel');
 
 
-INSERT INTO AnomalyClass(Name) VALUES('Safe');
-INSERT INTO AnomalyClass(Name) VALUES('Euclid');
-INSERT INTO AnomalyClass(Name) VALUES('Keter');
-INSERT INTO AnomalyClass(Name) VALUES('Thaumiel');
-INSERT INTO AnomalyClass(Name) VALUES('Neutralized');
+INSERT INTO AnomalyClass(Id, Name) VALUES(1, 'Safe');
+INSERT INTO AnomalyClass(Id, Name) VALUES(2, 'Euclid');
+INSERT INTO AnomalyClass(Id, Name) VALUES(3, 'Keter');
+INSERT INTO AnomalyClass(Id, Name) VALUES(4, 'Thaumiel');
+INSERT INTO AnomalyClass(Id, Name) VALUES(5, 'Neutralized');
 
-INSERT INTO SCP(Name, Description, SecurityClearanceNeeded, ClassId) Values('Mihael', '', 5, 1);
-INSERT INTO SCP(Name, Description, SecurityClearanceNeeded, ClassId) Values('Kabinet 11', '', 3, 3);
+INSERT INTO SCP(Id, Name, Description, SecurityClearanceNeeded, ClassId) Values(1, 'Mihael', '', 5, 1);
+INSERT INTO SCP(Id, Name, Description, SecurityClearanceNeeded, ClassId) Values(2, 'Kabinet 11', '', 3, 3);
 
+SELECT * FROM SCP;
