@@ -2984,3 +2984,244 @@ Processing by ScpController#index as HTML
 Completed 200 OK in 54ms (Views: 49.9ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 20:56:01 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mshow (24.8ms)[0m  [1m[34m SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId;
+              WHERE scp.Id = ?[0m  [[nil, "1"]]
+  ↳ app/controllers/scp_controller.rb:17
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 24.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::RangeException: column index out of range:  SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId;
+              WHERE scp.Id = ?):
+  
+app/controllers/scp_controller.rb:17:in `show'
+Started GET "/scp/" for ::1 at 2019-05-29 20:56:09 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 90ms (Views: 85.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 20:56:21 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mshow (0.5ms)[0m  [1m[34m SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId;
+              WHERE scp.Id = ?[0m  [[nil, "1"]]
+  ↳ app/controllers/scp_controller.rb:18
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::RangeException: column index out of range:  SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId;
+              WHERE scp.Id = ?):
+  
+app/controllers/scp_controller.rb:18:in `show'
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 20:56:42 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mshow (0.9ms)[0m  [1m[34m SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId;
+              WHERE scp.Id = ?[0m  [[nil, "1"]]
+  ↳ app/controllers/scp_controller.rb:20
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::RangeException: column index out of range:  SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId;
+              WHERE scp.Id = ?):
+  
+app/controllers/scp_controller.rb:20:in `show'
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 20:59:20 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mshow (4.9ms)[0m  [1m[34m SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              WHERE scp.Id = ?;[0m  [[nil, "1"]]
+  ↳ app/controllers/scp_controller.rb:18
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 49ms (Views: 40.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 20:59:34 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mshow (0.8ms)[0m  [1m[34m SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              WHERE scp.Id = ?;[0m  [[nil, "1"]]
+  ↳ app/controllers/scp_controller.rb:18
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 62ms (Views: 54.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 20:59:51 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mshow (1.2ms)[0m  [1m[34m SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              WHERE scp.Id = ?;[0m  [[nil, "1"]]
+  ↳ app/controllers/scp_controller.rb:18
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 63ms (Views: 54.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 21:01:50 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mshow (0.3ms)[0m  [1m[34m SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              WHERE scp.Id = ?;[0m  [[nil, "1"]]
+  ↳ app/controllers/scp_controller.rb:18
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 21:02:12 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mshow (0.6ms)[0m  [1m[34m SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              WHERE scp.Id = ?;[0m  [[nil, "1"]]
+  ↳ app/controllers/scp_controller.rb:18
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 71ms (Views: 66.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 21:02:21 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mshow (1.2ms)[0m  [1m[34m SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              WHERE scp.Id = ?;[0m  [[nil, "1"]]
+  ↳ app/controllers/scp_controller.rb:18
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 36.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 21:03:05 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mshow (0.4ms)[0m  [1m[34m SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              WHERE scp.Id = ?;[0m  [[nil, "1"]]
+  ↳ app/controllers/scp_controller.rb:18
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 54ms (Views: 49.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 21:03:31 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mshow (0.4ms)[0m  [1m[34m SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              WHERE scp.Id = ?;[0m  [[nil, "1"]]
+  ↳ app/controllers/scp_controller.rb:18
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 50ms (Views: 47.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 21:03:46 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mshow (0.4ms)[0m  [1m[34m SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              WHERE scp.Id = ?;[0m  [[nil, "1"]]
+  ↳ app/controllers/scp_controller.rb:18
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 46ms (Views: 42.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 21:04:09 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mshow (1.0ms)[0m  [1m[34m SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              WHERE scp.Id = ?;[0m  [[nil, "1"]]
+  ↳ app/controllers/scp_controller.rb:18
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 57ms (Views: 51.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-29 21:04:10 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 72ms (Views: 67.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 21:04:12 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mshow (0.3ms)[0m  [1m[34m SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+              FROM SCP scp
+              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              WHERE scp.Id = ?;[0m  [[nil, "1"]]
+  ↳ app/controllers/scp_controller.rb:18
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 58ms (Views: 54.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-29 21:04:13 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 59ms (Views: 53.7ms | ActiveRecord: 0.6ms)
+
+

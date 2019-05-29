@@ -47,4 +47,8 @@ INSERT INTO AnomalyClass(Id, Name) VALUES(5, 'Neutralized');
 INSERT INTO SCP(Id, Name, Description, SecurityClearanceNeeded, ClassId) Values(1, 'Mihael', '', 5, 1);
 INSERT INTO SCP(Id, Name, Description, SecurityClearanceNeeded, ClassId) Values(2, 'Kabinet 11', '', 3, 3);
 
-SELECT * FROM SCP;
+SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+FROM SCP scp
+INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId;
+WHERE scp.Id = 1;
