@@ -2587,3 +2587,400 @@ Completed 200 OK in 44ms (Views: 36.1ms | ActiveRecord: 0.1ms)
   [1m[35m (0.9ms)[0m  [1m[34mSELECT * FROM SCP[0m
   [1m[35m (3.0ms)[0m  [1m[34mSELECT * FROM AnomalyClass[0m
   [1m[35m (1.3ms)[0m  [1m[34mSELECT * FROM AnomalyClass[0m
+Started GET "/scp" for ::1 at 2019-05-29 20:32:07 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/keepo24/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/scp"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/scp/index" for ::1 at 2019-05-29 20:32:21 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 499ms (Views: 496.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/scp/index" for ::1 at 2019-05-29 20:32:52 +0300
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:2:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/scp/" for ::1 at 2019-05-29 20:32:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/scp"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/scp/" for ::1 at 2019-05-29 20:33:27 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 45ms (Views: 39.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/scp/" for ::1 at 2019-05-29 20:36:41 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (411.5ms)
+Completed 500 Internal Server Error in 420ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `monster' for #<#<Class:0x00007f06bca50810>:0x00007f06c0927340>
+Did you mean?  monster_url):
+     9: <tbody>
+    10:     <% @scps.each do |scp| %>
+    11:       <tr>
+    12:         <td><%= link_to 'Show ', controller: "scp", action: "show", monster: monster.id %></td>
+    13:         <!-- <td><%= link_to 'Edit', edit_monster_path(monster) %></td> -->
+    14:         <!-- <td><%= link_to 'Destroy', monster %></td> -->
+    15:       </tr>
+  
+app/views/scp/index.html.erb:12:in `block in _app_views_scp_index_html_erb__1629041036206193841_69833423667760'
+app/views/scp/index.html.erb:10:in `each'
+app/views/scp/index.html.erb:10:in `_app_views_scp_index_html_erb__1629041036206193841_69833423667760'
+Started GET "/scp/" for ::1 at 2019-05-29 20:36:57 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<SQLite3::ResultSet::HashWithTypesAndFields:0x00007f06bc00f1a8>):
+     9: <tbody>
+    10:     <% @scps.each do |scp| %>
+    11:       <tr>
+    12:         <td><%= link_to 'Show ', controller: "scp", action: "show", scp: scp.id %></td>
+    13:         <!-- <td><%= link_to 'Edit', edit_monster_path(monster) %></td> -->
+    14:         <!-- <td><%= link_to 'Destroy', monster %></td> -->
+    15:       </tr>
+  
+app/views/scp/index.html.erb:12:in `block in _app_views_scp_index_html_erb__1629041036206193841_69833450349660'
+app/views/scp/index.html.erb:10:in `each'
+app/views/scp/index.html.erb:10:in `_app_views_scp_index_html_erb__1629041036206193841_69833450349660'
+Started GET "/scp/" for ::1 at 2019-05-29 20:37:17 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<SQLite3::ResultSet::HashWithTypesAndFields:0x00007f06bc7a46e8>):
+    10:     <% @scps.each do |scp| %>
+    11:       <tr>
+    12:       	<%= scp %>
+    13:         <!-- <td><%= link_to 'Show ', controller: "scp", action: "show", scp: scp.id %></td> -->
+    14:         <!-- <td><%= link_to 'Edit', edit_monster_path(monster) %></td> -->
+    15:         <!-- <td><%= link_to 'Destroy', monster %></td> -->
+    16:       </tr>
+  
+app/views/scp/index.html.erb:13:in `block in _app_views_scp_index_html_erb__1629041036206193841_69833454243580'
+app/views/scp/index.html.erb:10:in `each'
+app/views/scp/index.html.erb:10:in `_app_views_scp_index_html_erb__1629041036206193841_69833454243580'
+Started GET "/scp/" for ::1 at 2019-05-29 20:37:20 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<SQLite3::ResultSet::HashWithTypesAndFields:0x00007f06c0988f50>):
+    10:     <% @scps.each do |scp| %>
+    11:       <tr>
+    12:       	<%= scp %>
+    13:         <!-- <td><%= link_to 'Show ', controller: "scp", action: "show", scp: scp.id %></td> -->
+    14:         <!-- <td><%= link_to 'Edit', edit_monster_path(monster) %></td> -->
+    15:         <!-- <td><%= link_to 'Destroy', monster %></td> -->
+    16:       </tr>
+  
+app/views/scp/index.html.erb:13:in `block in _app_views_scp_index_html_erb__1629041036206193841_69833489061260'
+app/views/scp/index.html.erb:10:in `each'
+app/views/scp/index.html.erb:10:in `_app_views_scp_index_html_erb__1629041036206193841_69833489061260'
+Started GET "/scp/" for ::1 at 2019-05-29 20:37:31 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 72ms (Views: 68.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/scp/" for ::1 at 2019-05-29 20:38:36 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `Id' for #<SQLite3::ResultSet::HashWithTypesAndFields:0x00007f06b898f6f0>):
+    10:     <% @scps.each do |scp| %>
+    11:       <tr>
+    12:       	<%= scp %>
+    13:         <td><%= link_to 'Show ', controller: "scp", action: "show", id: scp.Id %></td>
+    14:         <td><%= link_to 'Edit', controller: "scp", action: "update", id: scp.Id %></td>
+    15:         <td><%= link_to 'Destroy', monster %></td>
+    16:       </tr>
+  
+app/views/scp/index.html.erb:13:in `block in _app_views_scp_index_html_erb__1629041036206193841_69833421776680'
+app/views/scp/index.html.erb:10:in `each'
+app/views/scp/index.html.erb:10:in `_app_views_scp_index_html_erb__1629041036206193841_69833421776680'
+Started GET "/scp/" for ::1 at 2019-05-29 20:38:51 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/scp/" for ::1 at 2019-05-29 20:39:16 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (476.2ms)
+Completed 500 Internal Server Error in 483ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `monster' for #<#<Class:0x00007f06bca50810>:0x00007f06c1d73790>
+Did you mean?  monster_url):
+    12:       	<%= scp %>
+    13:         <td><%= link_to 'Show ', controller: "scp", action: "show", id: scp["Id"] %></td>
+    14:         <td><%= link_to 'Edit', controller: "scp", action: "update", id: scp["Id"] %></td>
+    15:         <td><%= link_to 'Destroy', monster %></td>
+    16:       </tr>
+    17:     <% end %>
+    18:   </tbody>
+  
+app/views/scp/index.html.erb:15:in `block in _app_views_scp_index_html_erb__1629041036206193841_69833499328640'
+app/views/scp/index.html.erb:10:in `each'
+app/views/scp/index.html.erb:10:in `_app_views_scp_index_html_erb__1629041036206193841_69833499328640'
+Started GET "/scp/" for ::1 at 2019-05-29 20:39:35 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"delete", :controller=>"Scp", :id=>1}):
+    12:       	<%= scp %>
+    13:         <td><%= link_to 'Show ', controller: "scp", action: "show", id: scp["Id"] %></td>
+    14:         <td><%= link_to 'Edit', controller: "scp", action: "update", id: scp["Id"] %></td>
+    15:         <td><%= link_to 'Destroy', controller: "Scp", action: "delete", id: scp["Id"] %></td>
+    16:       </tr>
+    17:     <% end %>
+    18:   </tbody>
+  
+app/views/scp/index.html.erb:15:in `block in _app_views_scp_index_html_erb__1629041036206193841_69833496538040'
+app/views/scp/index.html.erb:10:in `each'
+app/views/scp/index.html.erb:10:in `_app_views_scp_index_html_erb__1629041036206193841_69833496538040'
+Started GET "/scp/" for ::1 at 2019-05-29 20:39:46 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"delete", :controller=>"scp", :id=>1}):
+    12:       	<%= scp %>
+    13:         <td><%= link_to 'Show ', controller: "scp", action: "show", id: scp["Id"] %></td>
+    14:         <td><%= link_to 'Edit', controller: "scp", action: "update", id: scp["Id"] %></td>
+    15:         <td><%= link_to 'Destroy', controller: "scp", action: "delete", id: scp["Id"] %></td>
+    16:       </tr>
+    17:     <% end %>
+    18:   </tbody>
+  
+app/views/scp/index.html.erb:15:in `block in _app_views_scp_index_html_erb__1629041036206193841_69833455889380'
+app/views/scp/index.html.erb:10:in `each'
+app/views/scp/index.html.erb:10:in `_app_views_scp_index_html_erb__1629041036206193841_69833455889380'
+Started GET "/scp/" for ::1 at 2019-05-29 20:39:56 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 45ms (Views: 41.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scp/" for ::1 at 2019-05-29 20:40:03 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/scp/" for ::1 at 2019-05-29 20:40:04 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 45ms (Views: 40.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/scp/" for ::1 at 2019-05-29 20:40:10 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 48ms (Views: 44.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/scp/" for ::1 at 2019-05-29 20:40:16 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 52ms (Views: 47.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scp/" for ::1 at 2019-05-29 20:40:34 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 55ms (Views: 50.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/scp/" for ::1 at 2019-05-29 20:40:47 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT * FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 50ms (Views: 45.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scp/show?id=2" for ::1 at 2019-05-29 20:40:56 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 56ms (Views: 50.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 20:40:59 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/scp/show?id=1" for ::1 at 2019-05-29 20:41:02 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 59ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/scp/update?id=1" for ::1 at 2019-05-29 20:41:04 +0300
+Processing by ScpController#update as HTML
+  Parameters: {"id"=>"1"}
+  Rendering scp/update.html.erb within layouts/application
+  Rendered scp/update.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/scp/" for ::1 at 2019-05-29 20:42:11 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT Id, Name FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 45ms (Views: 39.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/scp/" for ::1 at 2019-05-29 20:42:13 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Id, Name FROM SCP[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 54ms (Views: 49.9ms | ActiveRecord: 0.4ms)
+
+
