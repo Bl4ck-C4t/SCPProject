@@ -30,7 +30,7 @@ class StaffsController < ApplicationController
     age = params[:staff][:age]
     position = params[:staff][:position]
     # query = "INSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('" + name +  "',"+ age +",'"+ position +"', '', '')"
-    query = "INSERT INTO staffs(name, age, position, created_at, updated_at) VALUES(?, ?, ?, '', '')"
+    query = "INSERT INTO staffs(name, age, position) VALUES(?, ?, ?)"
     # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
     #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
     vals = [[nil, name], [nil, age], [nil, position]]
@@ -45,8 +45,11 @@ class StaffsController < ApplicationController
     name = params[:staff][:name]
     age = params[:staff][:age]
     position = params[:staff][:position]
-    query = "UPDATE staffs SET name='" + name +  "', age="+ age +",position='"+ position +"' WHERE name = '" + original_name +"';"
-    result = ActiveRecord::Base.connection.execute(query)
+        query = "UPDATE staffs SET name = ?, age = ?, position = ? WHERE name = ?;"
+    # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
+    #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
+    vals = [[nil, name], [nil, age], [nil, position], [nil, original_name]]
+    result = ActiveRecord::Base.connection.exec_update(query, "update", vals)
 
   end
 
@@ -54,8 +57,12 @@ class StaffsController < ApplicationController
   # DELETE /staffs/1.json
   def destroy
     id = @staff.id
-    query = "DELETE FROM staffs WHERE id = " + id.to_s() +";"
-    result = ActiveRecord::Base.connection.execute(query)
+    query = "DELETE FROM staffs WHERE id = ?;"
+    # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
+    #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
+    vals = [[nil, id.to_s()]]
+    result = ActiveRecord::Base.connection.exec_delete(query, "insert", vals)
+
     respond_to do |format|
       format.html { redirect_to staffs_url, notice: 'Staff was successfully destroyed.' }
       format.json { head :no_content }
