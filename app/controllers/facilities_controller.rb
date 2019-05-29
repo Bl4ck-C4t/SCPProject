@@ -28,10 +28,10 @@ class FacilitiesController < ApplicationController
     name = params[:facility][:name]
     capacity = params[:facility][:capacity]
     # query = "INSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('" + name +  "',"+ age +",'"+ position +"', '', '')"
-    query = "INSERT INTO facilities(id, name, capacity) VALUES(?, ?, ?)"
-    # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
-    #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
-    vals = [[nil, Facility.all[-1].id+1], [nil, name], [nil, capacity]]
+      query = "INSERT INTO facilities(id, name, capacity) VALUES(?, ?, ?)"
+      # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
+      #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
+      vals = [[nil, Facility.all[-1].id+1], [nil, name], [nil, capacity]]
     result = ActiveRecord::Base.connection.exec_insert(query, "insert facility", vals)
     redirect_to facilities_path()
   end
@@ -39,21 +39,22 @@ class FacilitiesController < ApplicationController
   # PATCH/PUT /facilities/1
   # PATCH/PUT /facilities/1.json
   def update
-    respond_to do |format|
-      if @facility.update(facility_params)
-        format.html { redirect_to @facility, notice: 'Facility was successfully updated.' }
-        format.json { render :show, status: :ok, location: @facility }
-      else
-        format.html { render :edit }
-        format.json { render json: @facility.errors, status: :unprocessable_entity }
-      end
-    end
+    id = params[:id]
+    name = params[:facility][:name]
+    capacity = params[:facility][:capacity]
+    query = "UPDATE facilities SET name=?, capacity=? where id = ?;"
+    vals = [[nil, name], [nil, capacity], [nil, id]]
+    result = ActiveRecord::Base.connection.exec_update(query, "update facility", vals)
+    redirect_to facility_path(id)
   end
 
   # DELETE /facilities/1
   # DELETE /facilities/1.json
   def destroy
-    @facility.destroy
+    id = @facility.id
+    query = "DELETE FROM facilities WHERE id = ?;"
+    vals = [[nil, id]]
+    result = ActiveRecord::Base.connection.exec_delete(query, "delete facility", vals)
     respond_to do |format|
       format.html { redirect_to facilities_url, notice: 'Facility was successfully destroyed.' }
       format.json { head :no_content }
