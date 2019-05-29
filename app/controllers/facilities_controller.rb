@@ -28,10 +28,10 @@ class FacilitiesController < ApplicationController
     name = params[:facility][:name]
     capacity = params[:facility][:capacity]
     # query = "INSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('" + name +  "',"+ age +",'"+ position +"', '', '')"
-      query = "INSERT INTO facilities(id, name, capacity) VALUES(?, ?, ?)"
+      query = "INSERT INTO facilities(id, name, capacity) VALUES(NULL, ?, ?)"
       # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
       #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
-      vals = [[nil, Facility.all[-1].id+1], [nil, name], [nil, capacity]]
+      vals = [[nil, name], [nil, capacity]]
     result = ActiveRecord::Base.connection.exec_insert(query, "insert facility", vals)
     redirect_to facilities_path()
   end
