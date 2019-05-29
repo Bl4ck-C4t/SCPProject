@@ -1,19 +1,23 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
-  <%= @staff.name %>
+  <%= @staff["name"] %>
+</p>
+<p>
+  <strong>Clearance Level:</strong>
+  <%= @staff["SecurityClearance"] %>
 </p>
 
 <p>
-  <strong>Age:</strong>
-  <%= @staff.age %>
+  <strong>Clearance Rank:</strong>
+  <%= @staff["PositionClearance"] %>
 </p>
 
 <p>
   <strong>Position:</strong>
-  <%= @staff.position %>
+  <%= @staff["position"] %>
 </p>
+
 
 <%= link_to 'Edit', edit_staff_path(@staff) %> |
 <%= link_to 'Back', staffs_path %>

@@ -12,6 +12,17 @@ class StaffsController < ApplicationController
   # GET /staffs/1
   # GET /staffs/1.json
   def show
+    id = params[:id]
+
+    query = " SELECT staffs.id, staffs.name, staffs.position, sc.Name AS SecurityClearance, pc.ClearanceLevel AS PositionClearance
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionName = staffs.position
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+              WHERE staffs.id = ?;"
+
+    vals = [[nil, id]]
+
+    @staff = ActiveRecord::Base.connection.exec_insert(query, "show", vals)[0]
   end
 
   # GET /staffs/new
