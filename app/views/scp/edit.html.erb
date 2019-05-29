@@ -1,0 +1,41 @@
+<%= form_tag(controller: "scp", action: "update", method: "post") do %>
+	<%= label_tag(:name, "Name: ") %>
+	<%= text_field_tag(:name, @scp["Name"]) %>
+	<br><br>
+
+	<%= label_tag(:description, "Description: ") %>
+	<%= text_area_tag(:description, @scp["Description"]) %>
+
+	<p>Anomaly class:</p>
+	<% for anomaly_class in @anomaly_classes %>
+		<% if @scp["ClassId"] == anomaly_class["Id"] %>
+			<%= radio_button_tag(:anomaly_class, anomaly_class["Id"], true) %>
+		<% else %>
+			<%= radio_button_tag(:anomaly_class, anomaly_class["Id"]) %>
+		<% end %>
+		<%= label_tag(:anomaly_class, anomaly_class["Name"], style: "display: inline") %>
+		<br>
+	<% end %>
+
+	<br>
+	
+	<p>Security clearance needed:</p>
+	<% for clearance_level in @clearance_levels %>
+		<% if @scp["SecurityClearanceNeeded"] == clearance_level["Level"] %>
+			<%= radio_button_tag(:clearance_level, clearance_level["Level"], true) %>
+		<% else %>
+			<%= radio_button_tag(:clearance_level, clearance_level["Level"]) %>
+		<% end %>
+		<%= label_tag(:clearance_level, clearance_level["Name"], style: "display: inline") %>
+		<br>
+	<% end %>
+
+	<%= hidden_field_tag(:id, @scp["Id"]) %>
+	<br>
+
+	<%= submit_tag("Edit") %>
+
+<% end %>
+
+<br><br>
+<%= link_to 'Back', controller: "scp", action: "index" %>
