@@ -29,9 +29,13 @@ class StaffsController < ApplicationController
     name = params[:staff][:name]
     age = params[:staff][:age]
     position = params[:staff][:position]
-    query = "INSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('" + name +  "',"+ age +",'"+ position +"', '', '')"
-    result = ActiveRecord::Base.connection.execute(query)
-    redirect_to 'staffs#index'
+    # query = "INSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('" + name +  "',"+ age +",'"+ position +"', '', '')"
+    query = "INSERT INTO staffs(name, age, position, created_at, updated_at) VALUES(?, ?, ?, '', '')"
+    # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
+    #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
+    vals = [[nil, name], [nil, age], [nil, position]]
+    result = ActiveRecord::Base.connection.exec_insert(query, "insert", vals)
+    redirect_to staffs_path()
   end
 
   # PATCH/PUT /staffs/1
