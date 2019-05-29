@@ -1,0 +1,7 @@
+<p><%= @scp["Name"] %></p>
+<p>Clearance: <%= @scp["SecurityClearance"] %></p>
+<p>Classification: <%= @scp["AnomalyClass"] %></p>
+<br>
+<p><%= @scp["Description"] %></p>
+
+<%= link_to 'Back', controller: "scp", action: "index" %>
