@@ -30,6 +30,18 @@
 		<br>
 	<% end %>
 
+	<p>Facilities: </p>
+	<% for facility in @facilities %>
+		<% if @scp["FacilityContainedId"] == facility["id"] %>
+			<%= radio_button_tag(:facility, facility["id"], true) %>
+		<% else %>
+			<%= radio_button_tag(:facility, facility["id"]) %>
+		<% end %>
+		<%= label_tag(:facility, facility["name"], style: "display: inline") %>
+	<% end %>
+	
+	<br><br>
+
 	<%= hidden_field_tag(:id, @scp["Id"]) %>
 	<br>
 

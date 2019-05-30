@@ -8,10 +8,13 @@ class ScpController < ApplicationController
   def show
     id = params[:id]
 
-    query = " SELECT scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass
+    query = " SELECT 
+              scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass, f.name AS FacilityName
+
               FROM SCP scp
-              INNER JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
-              INNER JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              LEFT JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              LEFT JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              LEFT JOIN facilities f ON f.id = scp.FacilityContainedId
               WHERE scp.Id = ?;"
 
     vals = [[nil, id]]
@@ -25,11 +28,12 @@ class ScpController < ApplicationController
     description = params[:description]
     clearance_level = params[:clearance_level]
     anomaly_class = params[:anomaly_class]
+    facility = params[:facility]
 
-    query = " INSERT INTO SCP(Name, Description, SecurityClearanceNeeded, ClassId)
-              VALUES(?, ?, ?, ?)"
+    query = " INSERT INTO SCP(Name, Description, SecurityClearanceNeeded, ClassId, FacilityContainedId)
+              VALUES(?, ?, ?, ?, ?)"
 
-    vals = [[nil, name], [nil, description], [nil, clearance_level], [nil, anomaly_class]]
+    vals = [[nil, name], [nil, description], [nil, clearance_level], [nil, anomaly_class], [nil, facility]]
 
     begin
       ActiveRecord::Base.connection.exec_insert(query, "create", vals)
@@ -47,6 +51,9 @@ class ScpController < ApplicationController
 
     class_query = "SELECT Id, Name FROM AnomalyClass;"
     @anomaly_classes = ActiveRecord::Base.connection.execute(class_query)
+
+    facility_query = "SELECT id, name FROM facilities;"
+    @facilities = ActiveRecord::Base.connection.execute(facility_query)
   end
 
   def edit
@@ -56,10 +63,14 @@ class ScpController < ApplicationController
     class_query = "SELECT Id, Name FROM AnomalyClass;"
     @anomaly_classes = ActiveRecord::Base.connection.execute(class_query)
 
+    facility_query = "SELECT id, name FROM facilities;"
+    @facilities = ActiveRecord::Base.connection.execute(facility_query)
+
     id = params[:id]
 
 
-    query = " SELECT scp.Id, scp.Name, scp.Description, scp.SecurityClearanceNeeded, scp.ClassId 
+    query = " SELECT 
+              scp.Id, scp.Name, scp.Description, scp.SecurityClearanceNeeded, scp.ClassId, scp.FacilityContainedId 
               FROM SCP
               WHERE scp.Id = ?;"
 
@@ -75,16 +86,20 @@ class ScpController < ApplicationController
     description = params[:description]
     clearance_level = params[:clearance_level]
     anomaly_class = params[:anomaly_class]
+    facility = params[:facility]
 
     query = " UPDATE SCP
               SET 
               Name = ?,
               Description = ?,
               SecurityClearanceNeeded = ?,
-              ClassId = ?
+              ClassId = ?,
+              FacilityContainedId = ?
               WHERE Id = ?"
 
-    vals = [[nil, name], [nil, description], [nil, clearance_level], [nil, anomaly_class], [nil, id]]
+    vals = [
+      [nil, name], [nil, description], [nil, clearance_level], [nil, anomaly_class], [nil, facility],[nil, id]
+    ]
 
     begin
       ActiveRecord::Base.connection.exec_insert(query, "create", vals)

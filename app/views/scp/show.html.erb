@@ -1,6 +1,15 @@
 <p><%= @scp["Name"] %></p>
-<p>Clearance: <%= @scp["SecurityClearance"] %></p>
-<p>Classification: <%= @scp["AnomalyClass"] %></p>
+<% if @scp["SecurityClearance"] %>
+	<p>Clearance: <%= @scp["SecurityClearance"] %></p>
+<% end %>
+
+<% if @scp["AnomalyClass"] %>
+	<p>Classification: <%= @scp["AnomalyClass"] %></p>
+<% end %>
+
+<% if @scp["FacilityName"] %>
+	<p>Contained in facility: <%= @scp["FacilityName"] %></p>
+<% end %>
 <br>
 <p><%= @scp["Description"] %></p>
 
