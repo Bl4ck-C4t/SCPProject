@@ -30,6 +30,14 @@ class FacilitiesController < ApplicationController
              WHERE fac.Id = ?"
    vals = [[nil, id]]
     @scps = ActiveRecord::Base.connection.exec_query(query, "scp query", vals)
+
+    query = "SELECT st.name, st.position, st.id
+             FROM staffs st
+             INNER JOIN facilities fac ON fac.Id = st.FacilityId
+             WHERE fac.Id = ?"
+   vals = [[nil, id]]
+    @staff = ActiveRecord::Base.connection.exec_query(query, "staff query", vals)
+    puts @staff
   end
 
   # GET /facilities/new

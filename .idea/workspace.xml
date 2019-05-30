@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14f88d80-f307-4743-802c-3624aa6b718a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/HC/HCDOUd7-S45aJ_PjVAC_Vmjyud3i1aQv4cE3t9_Z3Dw.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/HC/HCDOUd7-S45aJ_PjVAC_Vmjyud3i1aQv4cE3t9_Z3Dw.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Rk/RkQLRXSz5LhJQnH7BT-ZDkVK0Rx8N9KhcVwR2A1HY4M.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/Rk/RkQLRXSz5LhJQnH7BT-ZDkVK0Rx8N9KhcVwR2A1HY4M.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/YX/YX15t7NTRP8vCV9_9JgIcKPs-AYf1fh1S5OyAgE5tak.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/YX/YX15t7NTRP8vCV9_9JgIcKPs-AYf1fh1S5OyAgE5tak.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/facilities_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/facilities_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/staffs_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/staffs_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/facilities/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/facilities/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/staffs/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/staffs/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/development.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db/development.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/vc/vcgiILg1wO98x-a4kX678ASAFWA1cL0iVx07VkHLPqA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/vc/vcgiILg1wO98x-a4kX678ASAFWA1cL0iVx07VkHLPqA.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,6 +21,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="facilities" />
+      </map>
+    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="67" />
@@ -75,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559208316396</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merge branch 'master' of https://github.com/TheShadow88/SCPProject and Fixed scp facility capacity bug&#10;&#10;# Conflicts:&#10;#&#9;db/development.sqlite3&#10;#&#9;log/development.log">
+      <created>1559209916583</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1559209916583</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -86,9 +104,9 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24958494" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24958494" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info active="true" anchor="bottom" id="Version Control" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -110,6 +128,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value=" Implemented new field in facilities and listing for scps for each facility" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Implemented new field in facilities and listing for scps for each facility" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/TheShadow88/SCPProject and Fixed scp facility capacity bug&#10;&#10;# Conflicts:&#10;#&#9;db/development.sqlite3&#10;#&#9;log/development.log" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/TheShadow88/SCPProject and Fixed scp facility capacity bug&#10;&#10;# Conflicts:&#10;#&#9;db/development.sqlite3&#10;#&#9;log/development.log" />
   </component>
 </project>

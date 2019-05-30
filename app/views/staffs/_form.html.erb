@@ -21,10 +21,23 @@
     <%= form.number_field :age %>
   </div>
 
-  <div class="field">
+  <!-- <div class="field">
     <%= form.label :position %>
     <%= form.text_field :position %>
-  </div>
+  </div> -->
+  <p>Position: </p>
+  <% for position in @positions %>
+    <%= radio_button_tag(:position, position["PositionName"]) %>
+    <%= label_tag(:position, position["PositionName"], style: "display: inline") %>
+  <% end %>
+
+  <p>Working at facility: </p>
+  <% for facility in @facilities %>
+    <%= radio_button_tag(:facility, facility["id"]) %>
+    <%= label_tag(:facility, facility["name"], style: "display: inline") %>
+  <% end %>
+  
+  <br><br>
 
   <div class="actions">
     <%= form.submit %>

@@ -28,6 +28,10 @@ class StaffsController < ApplicationController
   # GET /staffs/new
   def new
     @staff = Staff.new
+    facility_query = "SELECT id, name FROM facilities;"
+    @facilities = ActiveRecord::Base.connection.execute(facility_query)
+    position_query = "SELECT * FROM PositionClearance;"
+    @positions = ActiveRecord::Base.connection.execute(position_query)
   end
 
   # GET /staffs/1/edit
@@ -39,12 +43,12 @@ class StaffsController < ApplicationController
   def create
     name = params[:staff][:name]
     age = params[:staff][:age]
-    position = params[:staff][:position]
+    position = params[:position]
     # query = "INSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('" + name +  "',"+ age +",'"+ position +"', '', '')"
-    query = "INSERT INTO staffs(name, age, position) VALUES(?, ?, ?)"
+    query = "INSERT INTO staffs(name, age, position, FacilityId) VALUES(?, ?, ?, ?)"
     # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
     #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
-    vals = [[nil, name], [nil, age], [nil, position]]
+    vals = [[nil, name], [nil, age], [nil, position], [nil, params["facility"]]]
     result = ActiveRecord::Base.connection.exec_insert(query, "insert", vals)
     redirect_to staffs_path()
   end
@@ -71,7 +75,7 @@ class StaffsController < ApplicationController
     query = "DELETE FROM staffs WHERE id = ?;"
     # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
     #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
-    vals = [[nil, id.to_s()]]
+    vals = [[nil, params["id"]]]
     result = ActiveRecord::Base.connection.exec_delete(query, "insert", vals)
 
     respond_to do |format|

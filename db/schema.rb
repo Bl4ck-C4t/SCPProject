@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_30_093201) do
+ActiveRecord::Schema.define(version: 2019_05_30_170140) do
 
   create_table "AnomalyClass", primary_key: "Id", force: :cascade do |t|
     t.string "Name", limit: 32, null: false
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_093201) do
     t.string "name", limit: 255
     t.integer "age"
     t.string "position", limit: 255
+    t.integer "FacilityId"
   end
 
 end
