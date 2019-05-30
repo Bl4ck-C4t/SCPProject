@@ -49,6 +49,14 @@ class FacilitiesController < ApplicationController
 
   # GET /facilities/1/edit
   def edit
+    clearance_query = "SELECT Level, Name FROM SecurityClearance;"
+    @clearance_levels = ActiveRecord::Base.connection.execute(clearance_query)
+
+    class_query = "SELECT Id, Name FROM AnomalyClass;"
+    @anomaly_classes = ActiveRecord::Base.connection.execute(class_query)
+
+    facility_query = "SELECT id, name FROM facilities;"
+    @facilities = ActiveRecord::Base.connection.execute(facility_query)
   end
 
   # POST /facilities

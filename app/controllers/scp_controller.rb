@@ -57,7 +57,7 @@ class ScpController < ApplicationController
                 WHERE f.id = ?;"
 
     vals = [[nil, facility]]
-    facility_info = ActiveRecord::Base.connection.exec_insert(facility_count, "facility_info", vals)[0]
+    facility_info = ActiveRecord::Base.connection.exec_query(facility_count, "facility_info", vals)[0]
     print("faclity id " + facility)
     print(facility_info )
     return facility_info["SCPCount"] >= facility_info["FacilityCapacity"]
@@ -108,10 +108,7 @@ class ScpController < ApplicationController
     anomaly_class = params[:anomaly_class]
     facility = params[:facility]
 
-    if facility and is_facility_full(facility)
-        redirect_to controller: "scp", action: "edit", id: id
-        return
-    end
+    
 
     query = " UPDATE SCP
               SET 
