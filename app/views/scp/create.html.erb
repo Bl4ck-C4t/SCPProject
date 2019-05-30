@@ -24,6 +24,14 @@
 
 	<br>
 
+	<p>Facilities: </p>
+	<% for facility in @facilities %>
+		<%= radio_button_tag(:facility, facility["id"]) %>
+		<%= label_tag(:facility, facility["name"], style: "display: inline") %>
+	<% end %>
+	
+	<br><br>
+	
 	<%= submit_tag("submit") %>
 
 <% end %>
