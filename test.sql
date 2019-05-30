@@ -23,7 +23,7 @@ CREATE TABLE AnomalyClass(
 );
 
 CREATE TABLE SCP(
-	Id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Id INTEGER PRIMARY KEY AUTO_INCREMENT,
 	Name VARCHAR(128) NOT NULL,
     Description TEXT,
 	SecurityClearanceNeeded INTEGER,
@@ -50,8 +50,11 @@ INSERT INTO AnomalyClass(Name) VALUES('Keter');
 INSERT INTO AnomalyClass(Name) VALUES('Thaumiel');
 INSERT INTO AnomalyClass(Name) VALUES('Neutralized');
 
-INSERT INTO SCP(Name, Description, SecurityClearanceNeeded, ClassId) Values('Mihael', '', 5, 1);
-INSERT INTO SCP(Name, Description, SecurityClearanceNeeded, ClassId) Values('Kabinet 11', '', 3, 3);
+INSERT INTO facilities(name, capacity) VALUES("asdsa", 2);
+INSERT INTO facilities(name, capacity) VALUES("aasddsa", 3);
+
+INSERT INTO SCP(Name, Description, SecurityClearanceNeeded, ClassId, FacilityContainedId) Values('Mihael', '', 5, 1, 1);
+INSERT INTO SCP(Name, Description, SecurityClearanceNeeded, ClassId, FacilityContainedId) Values('Kabinet 11', '', 3, 3, 1);
 
 
 
@@ -67,3 +70,9 @@ SELECT * FROM SecurityClearance;
 SELECT * FROM AnomalyClass;
 
 SELECT * FROM SCP;
+
+SELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 1
+                GROUP BY f.capacity;

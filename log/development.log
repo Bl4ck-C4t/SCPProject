@@ -4179,3 +4179,1571 @@ Processing by FacilitiesController#show as HTML
 Completed 200 OK in 131ms (Views: 122.4ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/scp" for ::1 at 2019-05-30 11:44:56 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/keepo24/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ScpController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 473ms (Views: 455.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 11:53:06 +0300
+  
+SyntaxError (/home/keepo24/SCPProject/app/controllers/scp_controller.rb:41: syntax error, unexpected ':', expecting keyword_then or ';' or '\n'
+...] >= facility_info["SCPCount"]:
+...                              ^):
+  
+app/controllers/scp_controller.rb:41: syntax error, unexpected ':', expecting keyword_then or ';' or '\n'
+Started GET "/scp" for ::1 at 2019-05-30 11:53:51 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 106ms (Views: 101.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 11:53:56 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:63
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:66
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:69
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 83ms (Views: 73.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/facilities" for ::1 at 2019-05-30 11:54:01 +0300
+Processing by FacilitiesController#index as HTML
+  [1m[36mFacility Load (0.5ms)[0m  [1m[34mSELECT * FROM facilities[0m
+  ↳ app/controllers/facilities_controller.rb:8
+  Rendering facilities/index.html.erb within layouts/application
+  Rendered facilities/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 112ms (Views: 85.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/facilities/new" for ::1 at 2019-05-30 11:54:05 +0300
+Processing by FacilitiesController#new as HTML
+  Rendering facilities/new.html.erb within layouts/application
+  Rendered facilities/_form.html.erb (40.4ms)
+  Rendered facilities/new.html.erb within layouts/application (45.3ms)
+Completed 200 OK in 130ms (Views: 124.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/facilities" for ::1 at 2019-05-30 11:54:14 +0300
+Processing by FacilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D2mPvMzVG9lcCEiEZtrjaZeY4Ked7t5ZbgCUQrapidXiY+R/Ec3MJEC3ScndW9yVgOEBwaJWMqbYRVHeXOHfwg==", "facility"=>{"name"=>"malko facility s 1 chovek", "capacity"=>"1"}, "commit"=>"Create Facility"}
+  [1m[36minsert facility (10.2ms)[0m  [1m[32mINSERT INTO facilities(id, name, capacity) VALUES(NULL, ?, ?)[0m  [[nil, "malko facility s 1 chovek"], [nil, "1"]]
+  ↳ app/controllers/facilities_controller.rb:35
+Redirected to http://localhost:3000/facilities
+Completed 302 Found in 18ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/facilities" for ::1 at 2019-05-30 11:54:14 +0300
+Processing by FacilitiesController#index as HTML
+  [1m[36mFacility Load (0.2ms)[0m  [1m[34mSELECT * FROM facilities[0m
+  ↳ app/controllers/facilities_controller.rb:8
+  Rendering facilities/index.html.erb within layouts/application
+  Rendered facilities/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 51ms (Views: 47.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 11:54:20 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 77ms (Views: 71.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 11:54:22 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:63
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:66
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:69
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 105ms (Views: 99.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 11:54:31 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EBZu6gJhJZGgoCYgmhj11Cak2o0UrXwINa/KeoJnMoH3Y/NTzr5DrZK3Ov3uVurKkEmEZJdABEHwXZpSQgzepQ==", "name"=>"asdasd", "description"=>"123", "anomaly_class"=>"2", "clearance_level"=>"2", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 1;[0m
+  ↳ app/controllers/scp_controller.rb:39
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.9ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/scp_controller.rb:41:in `[]'
+app/controllers/scp_controller.rb:41:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 11:55:33 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EBZu6gJhJZGgoCYgmhj11Cak2o0UrXwINa/KeoJnMoH3Y/NTzr5DrZK3Ov3uVurKkEmEZJdABEHwXZpSQgzepQ==", "name"=>"asdasd", "description"=>"123", "anomaly_class"=>"2", "clearance_level"=>"2", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 1;[0m
+  ↳ app/controllers/scp_controller.rb:39
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.4ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/scp_controller.rb:41:in `[]'
+app/controllers/scp_controller.rb:41:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 11:56:27 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EBZu6gJhJZGgoCYgmhj11Cak2o0UrXwINa/KeoJnMoH3Y/NTzr5DrZK3Ov3uVurKkEmEZJdABEHwXZpSQgzepQ==", "name"=>"asdasd", "description"=>"123", "anomaly_class"=>"2", "clearance_level"=>"2", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 1;[0m
+  ↳ app/controllers/scp_controller.rb:39
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.3ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/scp_controller.rb:41:in `[]'
+app/controllers/scp_controller.rb:41:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 11:57:20 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EBZu6gJhJZGgoCYgmhj11Cak2o0UrXwINa/KeoJnMoH3Y/NTzr5DrZK3Ov3uVurKkEmEZJdABEHwXZpSQgzepQ==", "name"=>"asdasd", "description"=>"123", "anomaly_class"=>"2", "clearance_level"=>"2", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 1;[0m
+  ↳ app/controllers/scp_controller.rb:39
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/scp_controller.rb:41:in `[]'
+app/controllers/scp_controller.rb:41:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 11:58:07 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EBZu6gJhJZGgoCYgmhj11Cak2o0UrXwINa/KeoJnMoH3Y/NTzr5DrZK3Ov3uVurKkEmEZJdABEHwXZpSQgzepQ==", "name"=>"asdasd", "description"=>"123", "anomaly_class"=>"2", "clearance_level"=>"2", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 1;[0m
+  ↳ app/controllers/scp_controller.rb:39
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.6ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/scp_controller.rb:42:in `[]'
+app/controllers/scp_controller.rb:42:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 11:58:51 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EBZu6gJhJZGgoCYgmhj11Cak2o0UrXwINa/KeoJnMoH3Y/NTzr5DrZK3Ov3uVurKkEmEZJdABEHwXZpSQgzepQ==", "name"=>"asdasd", "description"=>"123", "anomaly_class"=>"2", "clearance_level"=>"2", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 1;[0m
+  ↳ app/controllers/scp_controller.rb:39
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/scp_controller.rb:42:in `[]'
+app/controllers/scp_controller.rb:42:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 11:59:07 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EBZu6gJhJZGgoCYgmhj11Cak2o0UrXwINa/KeoJnMoH3Y/NTzr5DrZK3Ov3uVurKkEmEZJdABEHwXZpSQgzepQ==", "name"=>"asdasd", "description"=>"123", "anomaly_class"=>"2", "clearance_level"=>"2", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 1;[0m
+  ↳ app/controllers/scp_controller.rb:39
+Redirected to http://localhost:3000/scp/create
+  [1m[36mcreate (14.3ms)[0m  [1m[32m INSERT INTO SCP(Name, Description, SecurityClearanceNeeded, ClassId, FacilityContainedId)
+              VALUES(?, ?, ?, ?, ?)[0m  [[nil, "asdasd"], [nil, "123"], [nil, "2"], [nil, "2"], [nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:52
+Redirected to 
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 14.8ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/scp_controller.rb:53:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 11:59:20 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EBZu6gJhJZGgoCYgmhj11Cak2o0UrXwINa/KeoJnMoH3Y/NTzr5DrZK3Ov3uVurKkEmEZJdABEHwXZpSQgzepQ==", "name"=>"asdasd", "description"=>"123", "anomaly_class"=>"2", "clearance_level"=>"2", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 1;[0m
+  ↳ app/controllers/scp_controller.rb:39
+Redirected to http://localhost:3000/scp/create
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 11:59:20 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:65
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:68
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:71
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 129ms (Views: 120.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 11:59:35 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WZwFB7OMxhRQff5uvvrHH4KKXzsKinlIt8b6LNyQpJ6An3ncJPoGk1TE75A8eERocYKycxuIZmDpMDf+RXTOlg==", "name"=>"asdasd", "description"=>"123123", "anomaly_class"=>"1", "clearance_level"=>"4", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 1;[0m
+  ↳ app/controllers/scp_controller.rb:39
+Redirected to http://localhost:3000/scp/create
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 11:59:35 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:65
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:68
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:71
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 68ms (Views: 58.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 12:00:22 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:66
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:69
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:72
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 70ms (Views: 62.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 12:00:41 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:66
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:69
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:72
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 69ms (Views: 62.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:00:47 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FW+vLq6JLPEJvdYV1ydkWkdereG867MHM3ZHewlnns7MbNP1Of/sdg0Ex+tVpecttFZAqa3prC9tgIqpkIP0xg==", "name"=>"asdsad", "description"=>"123", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (17.6ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, nil]]
+  ↳ app/controllers/scp_controller.rb:40
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 17.6ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:43:in `>='
+app/controllers/scp_controller.rb:43:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:03:51 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FW+vLq6JLPEJvdYV1ydkWkdereG867MHM3ZHewlnns7MbNP1Of/sdg0Ex+tVpecttFZAqa3prC9tgIqpkIP0xg==", "name"=>"asdsad", "description"=>"123", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.4ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, nil]]
+  ↳ app/controllers/scp_controller.rb:40
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:42:in `>='
+app/controllers/scp_controller.rb:42:in `new'
+Started GET "/scp/create" for ::1 at 2019-05-30 12:04:12 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:66
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:69
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:72
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 73ms (Views: 60.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:04:18 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xg7te5Gp9149Ffl39flCEV7ZxO2P43Jd2By1OapCwvUfDZGgBt832Tms6Il3e8FmrdEppZ7hbXWG6njrM6ao/Q==", "name"=>"123", "description"=>"as", "commit"=>"submit", "method"=>"post"}
+  [1m[36mcreate (5.3ms)[0m  [1m[32m INSERT INTO SCP(Name, Description, SecurityClearanceNeeded, ClassId, FacilityContainedId)
+              VALUES(?, ?, ?, ?, ?)[0m  [[nil, "123"], [nil, "as"], [nil, nil], [nil, nil], [nil, nil]]
+  ↳ app/controllers/scp_controller.rb:54
+Redirected to http://localhost:3000/scp
+Completed 302 Found in 14ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:04:18 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 73ms (Views: 67.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/scp/show?id=6" for ::1 at 2019-05-30 12:04:20 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mshow (0.5ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass,
+              f.name AS FacilityName, f.id AS FacilityId
+
+              FROM SCP scp
+              LEFT JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              LEFT JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              LEFT JOIN facilities f ON f.id = scp.FacilityContainedId
+              WHERE scp.Id = ?;[0m  [[nil, "6"]]
+  ↳ app/controllers/scp_controller.rb:23
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 86ms (Views: 72.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:04:22 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 105ms (Views: 96.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/scp/edit?id=6" for ::1 at 2019-05-30 12:04:23 +0300
+Processing by ScpController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:77
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:80
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:83
+  [1m[36mupdate (0.8ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, scp.SecurityClearanceNeeded, scp.ClassId, scp.FacilityContainedId 
+              FROM SCP
+              WHERE scp.Id = ?;[0m  [[nil, "6"]]
+  ↳ app/controllers/scp_controller.rb:95
+  Rendering scp/edit.html.erb within layouts/application
+  Rendered scp/edit.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 103ms (Views: 83.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:04:25 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 130ms (Views: 121.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/scp/show?id=6" for ::1 at 2019-05-30 12:04:27 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mshow (0.9ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass,
+              f.name AS FacilityName, f.id AS FacilityId
+
+              FROM SCP scp
+              LEFT JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              LEFT JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              LEFT JOIN facilities f ON f.id = scp.FacilityContainedId
+              WHERE scp.Id = ?;[0m  [[nil, "6"]]
+  ↳ app/controllers/scp_controller.rb:23
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 83ms (Views: 78.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:04:28 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 83ms (Views: 78.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scp/edit?id=6" for ::1 at 2019-05-30 12:04:35 +0300
+Processing by ScpController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:77
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:80
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:83
+  [1m[36mupdate (0.4ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, scp.SecurityClearanceNeeded, scp.ClassId, scp.FacilityContainedId 
+              FROM SCP
+              WHERE scp.Id = ?;[0m  [[nil, "6"]]
+  ↳ app/controllers/scp_controller.rb:95
+  Rendering scp/edit.html.erb within layouts/application
+  Rendered scp/edit.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 69ms (Views: 63.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/scp/update?method=post" for ::1 at 2019-05-30 12:04:38 +0300
+Processing by ScpController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qPQaFYdBGkNw+j13P5lhrLvIcOyCBYgqhMC8gNrGYl7miRYrwMFDPuEnzPM8WZ+IF1N6ZCooxs9nNCSKkrY4Pw==", "name"=>"123", "description"=>"as", "facility"=>"2", "id"=>"6", "commit"=>"Edit", "method"=>"post"}
+  [1m[36mcreate (14.3ms)[0m  [1m[33m UPDATE SCP
+              SET 
+              Name = ?,
+              Description = ?,
+              SecurityClearanceNeeded = ?,
+              ClassId = ?,
+              FacilityContainedId = ?
+              WHERE Id = ?[0m  [[nil, "123"], [nil, "as"], [nil, nil], [nil, nil], [nil, "2"], [nil, "6"]]
+  ↳ app/controllers/scp_controller.rb:121
+Redirected to http://localhost:3000/scp/show?id=6
+Completed 302 Found in 21ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/scp/show?id=6" for ::1 at 2019-05-30 12:04:38 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mshow (0.5ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass,
+              f.name AS FacilityName, f.id AS FacilityId
+
+              FROM SCP scp
+              LEFT JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              LEFT JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              LEFT JOIN facilities f ON f.id = scp.FacilityContainedId
+              WHERE scp.Id = ?;[0m  [[nil, "6"]]
+  ↳ app/controllers/scp_controller.rb:23
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 83ms (Views: 78.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scp/show?id=6" for ::1 at 2019-05-30 12:06:10 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mshow (0.5ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass,
+              f.name AS FacilityName, f.id AS FacilityId
+
+              FROM SCP scp
+              LEFT JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              LEFT JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              LEFT JOIN facilities f ON f.id = scp.FacilityContainedId
+              WHERE scp.Id = ?;[0m  [[nil, "6"]]
+  ↳ app/controllers/scp_controller.rb:23
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 74ms (Views: 66.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:06:12 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 109ms (Views: 97.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/scp/edit?id=5" for ::1 at 2019-05-30 12:06:14 +0300
+Processing by ScpController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:81
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:84
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:87
+  [1m[36mupdate (0.3ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, scp.SecurityClearanceNeeded, scp.ClassId, scp.FacilityContainedId 
+              FROM SCP
+              WHERE scp.Id = ?;[0m  [[nil, "5"]]
+  ↳ app/controllers/scp_controller.rb:99
+  Rendering scp/edit.html.erb within layouts/application
+  Rendered scp/edit.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 101ms (Views: 93.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:06:17 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 91ms (Views: 85.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/scp/edit?id=6" for ::1 at 2019-05-30 12:06:19 +0300
+Processing by ScpController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:81
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:84
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:87
+  [1m[36mupdate (0.6ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, scp.SecurityClearanceNeeded, scp.ClassId, scp.FacilityContainedId 
+              FROM SCP
+              WHERE scp.Id = ?;[0m  [[nil, "6"]]
+  ↳ app/controllers/scp_controller.rb:99
+  Rendering scp/edit.html.erb within layouts/application
+  Rendered scp/edit.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 112ms (Views: 93.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:06:20 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 90ms (Views: 85.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scp/destroy?id=6" for ::1 at 2019-05-30 12:06:26 +0300
+Processing by ScpController#destroy as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mdestroy (16.7ms)[0m  [1m[31mDELETE FROM SCP WHERE Id = ?;[0m  [[nil, "6"]]
+  ↳ app/controllers/scp_controller.rb:145
+Redirected to http://localhost:3000/scp
+Completed 302 Found in 26ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:06:26 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 65ms (Views: 62.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/scp/destroy?id=5" for ::1 at 2019-05-30 12:06:27 +0300
+Processing by ScpController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mdestroy (22.1ms)[0m  [1m[31mDELETE FROM SCP WHERE Id = ?;[0m  [[nil, "5"]]
+  ↳ app/controllers/scp_controller.rb:145
+Redirected to http://localhost:3000/scp
+Completed 302 Found in 27ms (ActiveRecord: 22.1ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:06:27 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 80ms (Views: 75.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 12:06:28 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:70
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:73
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:76
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 85ms (Views: 78.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:06:33 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yhjNYZViR2WFk+CN6cnbY0yHisRZQPLIXrPcBu2XNO8tbVDYWb0hWbeE/FCdh8R9+mrULdqtioGbQYwuLfzYyw==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.6ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:61
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.6ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:63:in `>='
+app/controllers/scp_controller.rb:63:in `is_facility_full'
+app/controllers/scp_controller.rb:35:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:07:58 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yhjNYZViR2WFk+CN6cnbY0yHisRZQPLIXrPcBu2XNO8tbVDYWb0hWbeE/FCdh8R9+mrULdqtioGbQYwuLfzYyw==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.6ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:62
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:64:in `>='
+app/controllers/scp_controller.rb:64:in `is_facility_full'
+app/controllers/scp_controller.rb:35:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:08:15 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yhjNYZViR2WFk+CN6cnbY0yHisRZQPLIXrPcBu2XNO8tbVDYWb0hWbeE/FCdh8R9+mrULdqtioGbQYwuLfzYyw==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.2ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:62
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:65:in `>='
+app/controllers/scp_controller.rb:65:in `is_facility_full'
+app/controllers/scp_controller.rb:35:in `new'
+Started GET "/scp/" for ::1 at 2019-05-30 12:11:25 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/keepo24/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ScpController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 576ms (Views: 561.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 12:11:28 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:81
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:84
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:87
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 85ms (Views: 73.2ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:11:32 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dah8WRvheb/W+IyePyBSi0md9Dgmjc/o2Q/KqwtHr+KS3eHg1z4fg+TvkENLbk2V/3Cq0aVgt6Ec/ZqDyyxDxg==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.3ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:41
+  [1m[36mfacility_info (0.2ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:71
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:74:in `>='
+app/controllers/scp_controller.rb:74:in `is_facility_full'
+app/controllers/scp_controller.rb:44:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:12:23 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dah8WRvheb/W+IyePyBSi0md9Dgmjc/o2Q/KqwtHr+KS3eHg1z4fg+TvkENLbk2V/3Cq0aVgt6Ec/ZqDyyxDxg==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.4ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:41
+  [1m[36mfacility_info (0.4ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:72
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.8ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:75:in `>='
+app/controllers/scp_controller.rb:75:in `is_facility_full'
+app/controllers/scp_controller.rb:45:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:13:34 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/keepo24/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dah8WRvheb/W+IyePyBSi0md9Dgmjc/o2Q/KqwtHr+KS3eHg1z4fg+TvkENLbk2V/3Cq0aVgt6Ec/ZqDyyxDxg==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.4ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:41
+  [1m[36mfacility_info (0.5ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:72
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:75:in `>='
+app/controllers/scp_controller.rb:75:in `is_facility_full'
+app/controllers/scp_controller.rb:45:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:15:58 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dah8WRvheb/W+IyePyBSi0md9Dgmjc/o2Q/KqwtHr+KS3eHg1z4fg+TvkENLbk2V/3Cq0aVgt6Ec/ZqDyyxDxg==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.5ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:42
+  [1m[36mfacility_info (0.3ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:73
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.8ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:76:in `>='
+app/controllers/scp_controller.rb:76:in `is_facility_full'
+app/controllers/scp_controller.rb:46:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:17:12 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dah8WRvheb/W+IyePyBSi0md9Dgmjc/o2Q/KqwtHr+KS3eHg1z4fg+TvkENLbk2V/3Cq0aVgt6Ec/ZqDyyxDxg==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.8ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?
+                GROUP BY f.capacity;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:43
+  [1m[36mfacility_info (0.2ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:74
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.0ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:77:in `>='
+app/controllers/scp_controller.rb:77:in `is_facility_full'
+app/controllers/scp_controller.rb:47:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:17:34 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dah8WRvheb/W+IyePyBSi0md9Dgmjc/o2Q/KqwtHr+KS3eHg1z4fg+TvkENLbk2V/3Cq0aVgt6Ec/ZqDyyxDxg==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.5ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?
+                GROUP BY f.capacity;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:43
+  [1m[36mfacility_info (0.5ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:73
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.9ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:76:in `>='
+app/controllers/scp_controller.rb:76:in `is_facility_full'
+app/controllers/scp_controller.rb:46:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:18:42 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dah8WRvheb/W+IyePyBSi0md9Dgmjc/o2Q/KqwtHr+KS3eHg1z4fg+TvkENLbk2V/3Cq0aVgt6Ec/ZqDyyxDxg==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.6ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:42
+  [1m[36mfacility_info (0.3ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:72
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.9ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:75:in `>='
+app/controllers/scp_controller.rb:75:in `is_facility_full'
+app/controllers/scp_controller.rb:45:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:18:57 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dah8WRvheb/W+IyePyBSi0md9Dgmjc/o2Q/KqwtHr+KS3eHg1z4fg+TvkENLbk2V/3Cq0aVgt6Ec/ZqDyyxDxg==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.7ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 1;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:42
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::RangeException: column index out of range: SELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 1;):
+  
+app/controllers/scp_controller.rb:42:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:19:42 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dah8WRvheb/W+IyePyBSi0md9Dgmjc/o2Q/KqwtHr+KS3eHg1z4fg+TvkENLbk2V/3Cq0aVgt6Ec/ZqDyyxDxg==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.3ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:42
+  [1m[36mfacility_info (0.5ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:72
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:75:in `>='
+app/controllers/scp_controller.rb:75:in `is_facility_full'
+app/controllers/scp_controller.rb:45:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:21:32 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/keepo24/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dah8WRvheb/W+IyePyBSi0md9Dgmjc/o2Q/KqwtHr+KS3eHg1z4fg+TvkENLbk2V/3Cq0aVgt6Ec/ZqDyyxDxg==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.4ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:42
+  [1m[36mfacility_info (0.3ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:72
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.6ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:75:in `>='
+app/controllers/scp_controller.rb:75:in `is_facility_full'
+app/controllers/scp_controller.rb:45:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:21:58 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dah8WRvheb/W+IyePyBSi0md9Dgmjc/o2Q/KqwtHr+KS3eHg1z4fg+TvkENLbk2V/3Cq0aVgt6Ec/ZqDyyxDxg==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (1.7ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 2[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:42
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::RangeException: column index out of range: SELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 2):
+  
+app/controllers/scp_controller.rb:42:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:22:11 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dah8WRvheb/W+IyePyBSi0md9Dgmjc/o2Q/KqwtHr+KS3eHg1z4fg+TvkENLbk2V/3Cq0aVgt6Ec/ZqDyyxDxg==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.7ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 2[0m
+  ↳ app/controllers/scp_controller.rb:42
+  [1m[36mfacility_info (0.5ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:72
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.2ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:75:in `>='
+app/controllers/scp_controller.rb:75:in `is_facility_full'
+app/controllers/scp_controller.rb:45:in `new'
+Started GET "/scp/" for ::1 at 2019-05-30 12:22:35 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 432ms (Views: 426.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 12:22:38 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:81
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:84
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:87
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 76ms (Views: 67.7ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:22:47 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HKCEk6gI/hF9ivAvHaHcNhpQWEJbckkdcrriZX00YxL71RkqZNeYLU+d7PJp78MorL0Gq9ifMVS3SLJNvV+PNg==", "name"=>"12312", "description"=>"asd", "anomaly_class"=>"5", "clearance_level"=>"2", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.4ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 2[0m
+  ↳ app/controllers/scp_controller.rb:42
+  [1m[36mfacility_info (0.8ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:71
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.2ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:74:in `>='
+app/controllers/scp_controller.rb:74:in `is_facility_full'
+app/controllers/scp_controller.rb:44:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:23:18 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HKCEk6gI/hF9ivAvHaHcNhpQWEJbckkdcrriZX00YxL71RkqZNeYLU+d7PJp78MorL0Gq9ifMVS3SLJNvV+PNg==", "name"=>"12312", "description"=>"asd", "anomaly_class"=>"5", "clearance_level"=>"2", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.5ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 1[0m
+  ↳ app/controllers/scp_controller.rb:42
+  [1m[36mfacility_info (0.6ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:71
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.1ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:74:in `>='
+app/controllers/scp_controller.rb:74:in `is_facility_full'
+app/controllers/scp_controller.rb:44:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:24:27 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HKCEk6gI/hF9ivAvHaHcNhpQWEJbckkdcrriZX00YxL71RkqZNeYLU+d7PJp78MorL0Gq9ifMVS3SLJNvV+PNg==", "name"=>"12312", "description"=>"asd", "anomaly_class"=>"5", "clearance_level"=>"2", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.5ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = 2[0m
+  ↳ app/controllers/scp_controller.rb:42
+  [1m[36mfacility_info (0.3ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:71
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.8ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:74:in `>='
+app/controllers/scp_controller.rb:74:in `is_facility_full'
+app/controllers/scp_controller.rb:44:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:26:16 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HKCEk6gI/hF9ivAvHaHcNhpQWEJbckkdcrriZX00YxL71RkqZNeYLU+d7PJp78MorL0Gq9ifMVS3SLJNvV+PNg==", "name"=>"12312", "description"=>"asd", "anomaly_class"=>"5", "clearance_level"=>"2", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.4ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:42
+  [1m[36mfacility_info (0.3ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:71
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.7ms)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/scp_controller.rb:74:in `>='
+app/controllers/scp_controller.rb:74:in `is_facility_full'
+app/controllers/scp_controller.rb:44:in `new'
+Started GET "/facilities" for ::1 at 2019-05-30 12:26:59 +0300
+Processing by FacilitiesController#index as HTML
+  [1m[36mFacility Load (0.3ms)[0m  [1m[34mSELECT * FROM facilities[0m
+  ↳ app/controllers/facilities_controller.rb:8
+  Rendering facilities/index.html.erb within layouts/application
+  Rendered facilities/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 116ms (Views: 76.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/facilities/2" for ::1 at 2019-05-30 12:27:01 +0300
+Processing by FacilitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFacility Load (0.6ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/facilities_controller.rb:67
+  Rendering facilities/show.html.erb within layouts/application
+  Rendered facilities/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 91ms (Views: 72.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/facilities" for ::1 at 2019-05-30 12:27:03 +0300
+Processing by FacilitiesController#index as HTML
+  [1m[36mFacility Load (0.5ms)[0m  [1m[34mSELECT * FROM facilities[0m
+  ↳ app/controllers/facilities_controller.rb:8
+  Rendering facilities/index.html.erb within layouts/application
+  Rendered facilities/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 86ms (Views: 78.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/facilities/1" for ::1 at 2019-05-30 12:27:04 +0300
+Processing by FacilitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFacility Load (0.6ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/facilities_controller.rb:67
+  Rendering facilities/show.html.erb within layouts/application
+  Rendered facilities/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 79ms (Views: 68.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/facilities" for ::1 at 2019-05-30 12:27:06 +0300
+Processing by FacilitiesController#index as HTML
+  [1m[36mFacility Load (0.5ms)[0m  [1m[34mSELECT * FROM facilities[0m
+  ↳ app/controllers/facilities_controller.rb:8
+  Rendering facilities/index.html.erb within layouts/application
+  Rendered facilities/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 109ms (Views: 98.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/facilities/2" for ::1 at 2019-05-30 12:27:07 +0300
+Processing by FacilitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFacility Load (0.2ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/facilities_controller.rb:67
+  Rendering facilities/show.html.erb within layouts/application
+  Rendered facilities/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 112ms (Views: 107.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/facilities" for ::1 at 2019-05-30 12:27:08 +0300
+Processing by FacilitiesController#index as HTML
+  [1m[36mFacility Load (0.4ms)[0m  [1m[34mSELECT * FROM facilities[0m
+  ↳ app/controllers/facilities_controller.rb:8
+  Rendering facilities/index.html.erb within layouts/application
+  Rendered facilities/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 104ms (Views: 98.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/facilities/1" for ::1 at 2019-05-30 12:27:12 +0300
+Processing by FacilitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFacility Load (0.2ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/facilities_controller.rb:67
+  Rendering facilities/show.html.erb within layouts/application
+  Rendered facilities/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 58ms (Views: 53.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/facilities" for ::1 at 2019-05-30 12:27:26 +0300
+Processing by FacilitiesController#index as HTML
+  [1m[36mFacility Load (0.2ms)[0m  [1m[34mSELECT * FROM facilities[0m
+  ↳ app/controllers/facilities_controller.rb:8
+  Rendering facilities/index.html.erb within layouts/application
+  Rendered facilities/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 85ms (Views: 81.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/facilities/2" for ::1 at 2019-05-30 12:27:28 +0300
+Processing by FacilitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFacility Load (0.2ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/facilities_controller.rb:67
+  Rendering facilities/show.html.erb within layouts/application
+  Rendered facilities/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 82ms (Views: 75.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/facilities/2" for ::1 at 2019-05-30 12:27:49 +0300
+Processing by FacilitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/facilities_controller.rb:67
+  Rendering facilities/show.html.erb within layouts/application
+  Rendered facilities/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 91ms (Views: 63.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:27:52 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 94ms (Views: 88.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/scp/edit?id=3" for ::1 at 2019-05-30 12:27:55 +0300
+Processing by ScpController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:89
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:92
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:95
+  [1m[36mupdate (0.4ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, scp.SecurityClearanceNeeded, scp.ClassId, scp.FacilityContainedId 
+              FROM SCP
+              WHERE scp.Id = ?;[0m  [[nil, "3"]]
+  ↳ app/controllers/scp_controller.rb:107
+  Rendering scp/edit.html.erb within layouts/application
+  Rendered scp/edit.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 79ms (Views: 69.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:27:57 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 93ms (Views: 86.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 12:27:59 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:78
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:81
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:84
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 64ms (Views: 57.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:28:04 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eXKN4WIVN0jp1bJfue17HfKIT195w7OjSnjoopHVpLGeBxBYrspRdNvCroLNo2QDRGURtvouy+qPiriKUb5IlQ==", "name"=>"asdasd", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.7ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:42
+No template found for ScpController#new, rendering head :no_content
+Completed 204 No Content in 63ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 12:28:36 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:79
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:82
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:85
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 71ms (Views: 65.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:28:41 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zwezSrM3MsFIKNWuVLywLSBJHKvQCkr00L3lYsUj8NQWBM+RJEHyRkyRxFDWPjNa00Hx48EIVdyOSyiwXMea3A==", "name"=>"asdsa", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (1.8ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                INNER JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:42
+Redirected to http://localhost:3000/scp/create
+Completed 302 Found in 8ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 12:28:41 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:79
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:82
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:85
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 78ms (Views: 70.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 12:31:52 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/keepo24/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ScpController#create as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:70
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:73
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:76
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 559ms (Views: 541.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:32:00 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wa5pzQpii+DD3v4r3Vv1QNaGfjzvRRyJ90SC/po5Fu4YrRUWnRRLZ8dn79Vf2XY3JY6TdP5HA6Gpsk8sA9185g==", "name"=>"asdsad123", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.7ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                LEFT JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:60
+Redirected to http://localhost:3000/scp/create
+  [1m[36mcreate (16.1ms)[0m  [1m[32m INSERT INTO SCP(Name, Description, SecurityClearanceNeeded, ClassId, FacilityContainedId)
+              VALUES(?, ?, ?, ?, ?)[0m  [[nil, "asdsad123"], [nil, ""], [nil, nil], [nil, nil], [nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:45
+Redirected to 
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 16.8ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/scp_controller.rb:46:in `new'
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:32:07 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wa5pzQpii+DD3v4r3Vv1QNaGfjzvRRyJ90SC/po5Fu4YrRUWnRRLZ8dn79Vf2XY3JY6TdP5HA6Gpsk8sA9185g==", "name"=>"asdsad123", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.6ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                LEFT JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:61
+Redirected to http://localhost:3000/scp/create
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 12:32:07 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:71
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:74
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:77
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 62ms (Views: 55.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/scp/new?method=post" for ::1 at 2019-05-30 12:32:13 +0300
+Processing by ScpController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jsL1OiXTN9U6hf8aaMTUOyC+5miKEGuOBS8zHPO+DIRXwYnhsqX3Uj487uTqRldM07YLIJsSdKZb2f7OalpmjA==", "name"=>"asdsad", "description"=>"", "facility"=>"2", "commit"=>"submit", "method"=>"post"}
+  [1m[36mfacility_info (0.6ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                LEFT JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:61
+Redirected to http://localhost:3000/scp/create
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 12:32:13 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:71
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:74
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:77
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 67ms (Views: 61.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:32:15 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 85ms (Views: 81.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/scp/show?id=7" for ::1 at 2019-05-30 12:32:18 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mshow (0.9ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass,
+              f.name AS FacilityName, f.id AS FacilityId
+
+              FROM SCP scp
+              LEFT JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              LEFT JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              LEFT JOIN facilities f ON f.id = scp.FacilityContainedId
+              WHERE scp.Id = ?;[0m  [[nil, "7"]]
+  ↳ app/controllers/scp_controller.rb:23
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 71ms (Views: 64.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:32:19 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 101ms (Views: 93.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/scp/show?id=3" for ::1 at 2019-05-30 12:32:21 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mshow (0.6ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass,
+              f.name AS FacilityName, f.id AS FacilityId
+
+              FROM SCP scp
+              LEFT JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              LEFT JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              LEFT JOIN facilities f ON f.id = scp.FacilityContainedId
+              WHERE scp.Id = ?;[0m  [[nil, "3"]]
+  ↳ app/controllers/scp_controller.rb:23
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 81ms (Views: 75.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:32:22 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 79ms (Views: 73.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scp/show?id=2" for ::1 at 2019-05-30 12:32:24 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mshow (0.9ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass,
+              f.name AS FacilityName, f.id AS FacilityId
+
+              FROM SCP scp
+              LEFT JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              LEFT JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              LEFT JOIN facilities f ON f.id = scp.FacilityContainedId
+              WHERE scp.Id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:23
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 82ms (Views: 74.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:32:25 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 88ms (Views: 78.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:32:56 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 57ms (Views: 52.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/scp/edit?id=3" for ::1 at 2019-05-30 12:32:59 +0300
+Processing by ScpController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:81
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:84
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:87
+  [1m[36mupdate (0.2ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, scp.SecurityClearanceNeeded, scp.ClassId, scp.FacilityContainedId 
+              FROM SCP
+              WHERE scp.Id = ?;[0m  [[nil, "3"]]
+  ↳ app/controllers/scp_controller.rb:99
+  Rendering scp/edit.html.erb within layouts/application
+  Rendered scp/edit.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 79ms (Views: 73.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/scp/update?method=post" for ::1 at 2019-05-30 12:33:02 +0300
+Processing by ScpController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"buVsb9JshMJ9Ghs42rK6bfWUF2gq7lA/ck96QyTE++4gmGBRlezdv+zH6rzZckRJWQ8d4ILDHtqRu+JJbLShjw==", "name"=>"toq durveniq deto se dvizihi kato ne go gledash", "description"=>"kak se kazva?", "anomaly_class"=>"3", "clearance_level"=>"3", "facility"=>"2", "id"=>"3", "commit"=>"Edit", "method"=>"post"}
+  [1m[36mfacility_info (0.3ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                LEFT JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:60
+Redirected to http://localhost:3000/scp/create
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/scp/create" for ::1 at 2019-05-30 12:33:02 +0300
+Processing by ScpController#create as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:70
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:73
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:76
+  Rendering scp/create.html.erb within layouts/application
+  Rendered scp/create.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 82ms (Views: 77.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:33:05 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 84ms (Views: 81.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/scp/edit?id=3" for ::1 at 2019-05-30 12:33:26 +0300
+Processing by ScpController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:81
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:84
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:87
+  [1m[36mupdate (0.3ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, scp.SecurityClearanceNeeded, scp.ClassId, scp.FacilityContainedId 
+              FROM SCP
+              WHERE scp.Id = ?;[0m  [[nil, "3"]]
+  ↳ app/controllers/scp_controller.rb:99
+  Rendering scp/edit.html.erb within layouts/application
+  Rendered scp/edit.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 95ms (Views: 85.2ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/scp/update?method=post" for ::1 at 2019-05-30 12:33:28 +0300
+Processing by ScpController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aLdeqksLp6nYE0wXowFFtznj9VF/UYUACXFt2lp6HqAmylKUDIv+1EnOvZOgwbuTlXj/2dd8y+XqhfXQEgpEwQ==", "name"=>"toq durveniq deto se dvizihi kato ne go gledash", "description"=>"kak se kazva?", "anomaly_class"=>"3", "clearance_level"=>"3", "facility"=>"2", "id"=>"3", "commit"=>"Edit", "method"=>"post"}
+  [1m[36mfacility_info (0.6ms)[0m  [1m[34mSELECT f.capacity as FacilityCapacity, COUNT(*) as SCPCount
+                FROM facilities f
+                LEFT JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;[0m  [[nil, "2"]]
+  ↳ app/controllers/scp_controller.rb:60
+Redirected to http://localhost:3000/scp/edit?id=3
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/scp/edit?id=3" for ::1 at 2019-05-30 12:33:28 +0300
+Processing by ScpController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT Level, Name FROM SecurityClearance;[0m
+  ↳ app/controllers/scp_controller.rb:81
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT Id, Name FROM AnomalyClass;[0m
+  ↳ app/controllers/scp_controller.rb:84
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/scp_controller.rb:87
+  [1m[36mupdate (0.5ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, scp.SecurityClearanceNeeded, scp.ClassId, scp.FacilityContainedId 
+              FROM SCP
+              WHERE scp.Id = ?;[0m  [[nil, "3"]]
+  ↳ app/controllers/scp_controller.rb:99
+  Rendering scp/edit.html.erb within layouts/application
+  Rendered scp/edit.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 76ms (Views: 65.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/scp" for ::1 at 2019-05-30 12:33:31 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 87ms (Views: 80.1ms | ActiveRecord: 0.7ms)
+
+
