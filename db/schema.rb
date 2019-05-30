@@ -10,11 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_29_184113) do
+ActiveRecord::Schema.define(version: 2019_05_30_083326) do
+
+  create_table "AnomalyClass", primary_key: "Id", force: :cascade do |t|
+    t.string "Name", limit: 32, null: false
+    t.text "Description"
+  end
+
+  create_table "PositionClearance", primary_key: "PositionId", force: :cascade do |t|
+    t.string "PositionName", limit: 255, null: false
+    t.integer "ClearanceLevel", null: false
+  end
+
+  create_table "SCP", primary_key: "Id", force: :cascade do |t|
+    t.string "Name", limit: 128, null: false
+    t.text "Description"
+    t.integer "SecurityClearanceNeeded", null: false
+    t.integer "ClassId", null: false
+  end
+
+  create_table "SecurityClearance", primary_key: "Level", force: :cascade do |t|
+    t.string "Name", limit: 32, null: false
+    t.text "Description"
+  end
 
   create_table "facilities", force: :cascade do |t|
     t.string "name", limit: 150, null: false
     t.decimal "capacity", precision: 5, null: false
+    t.integer "ClassId", null: false
   end
 
   create_table "monsters", force: :cascade do |t|
@@ -28,11 +51,9 @@ ActiveRecord::Schema.define(version: 2019_05_29_184113) do
   end
 
   create_table "staffs", force: :cascade do |t|
-    t.string "name"
+    t.string "name", limit: 255
     t.integer "age"
-    t.string "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "position", limit: 255
   end
 
 end

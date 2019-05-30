@@ -4,18 +4,37 @@ class FacilitiesController < ApplicationController
   # GET /facilities
   # GET /facilities.json
   def index
+    id = params[:id]
+
     query = "SELECT * FROM facilities"
+   
     @facilities = Facility.find_by_sql(query)
   end
 
   # GET /facilities/1
   # GET /facilities/1.json
   def show
+    id = params[:id]
+
+    query = "SELECT fac.name, fac.capacity, ac.Name as AnomalyClass 
+             FROM facilities fac
+             INNER JOIN AnomalyClass ac ON ac.Id = fac.ClassId
+             WHERE fac.Id = ?"
+
+    vals = [[nil, id]]
+
+    @facility = ActiveRecord::Base.connection.exec_insert(query, "show", vals)[0]
+    query = "SELECT sc.Id, sc.Name 
+             FROM SCP sc
+             INNER JOIN facilities fac ON fac.Id = sc.ClassId;"
+    @scps = ActiveRecord::Base.connection.execute(query)
   end
 
   # GET /facilities/new
   def new
     @facility = Facility.new
+    class_query = "SELECT Id, Name FROM AnomalyClass;"
+    @anomaly_classes = ActiveRecord::Base.connection.execute(class_query)
   end
 
   # GET /facilities/1/edit
@@ -27,11 +46,12 @@ class FacilitiesController < ApplicationController
   def create
     name = params[:facility][:name]
     capacity = params[:facility][:capacity]
+    anomaly_class = params[:anomaly_class]
     # query = "INSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('" + name +  "',"+ age +",'"+ position +"', '', '')"
-      query = "INSERT INTO facilities(id, name, capacity) VALUES(NULL, ?, ?)"
+      query = "INSERT INTO facilities(id, name, capacity, ClassId) VALUES(NULL, ?, ?, ?)"
       # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
       #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
-      vals = [[nil, name], [nil, capacity]]
+      vals = [[nil, name], [nil, capacity], [nil, anomaly_class]]
     result = ActiveRecord::Base.connection.exec_insert(query, "insert facility", vals)
     redirect_to facilities_path()
   end

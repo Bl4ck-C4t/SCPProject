@@ -2,12 +2,32 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @facility.name %>
+  <%= @facility["name"] %>
 </p>
 
 <p>
   <strong>Capacity:</strong>
-  <%= @facility.capacity %>
+  <%= @facility["capacity"] %>
+</p>
+
+<p>
+  <strong>Anomaly Type:</strong>
+  <%= @facility["AnomalyClass"] %>
+</p>
+
+<p>
+  <strong>SCPs:</strong>
+  <tbody>
+	<% @scps.each do |scp| %>
+	  <tr>
+	  	<%= scp["Name"] %>
+	    <td><%= link_to 'Show', controller: "scp", action: "show", id: scp["Id"] %></td>
+	    <td><%= link_to 'Edit', controller: "scp", action: "edit", id: scp["Id"] %></td>
+	    <td><%= link_to 'Destroy', controller: "scp", action: "destroy", id: scp["Id"] %></td>
+	  </tr>
+	  <br>
+	<% end %>
+</tbody>
 </p>
 
 <%= link_to 'Edit', edit_facility_path(@facility) %> |

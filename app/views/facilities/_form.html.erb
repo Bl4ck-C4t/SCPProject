@@ -21,6 +21,15 @@
     <%= form.number_field :capacity %>
   </div>
 
+  <p>Anomaly class:</p>
+  <% for anomaly_class in @anomaly_classes %>
+    <%= radio_button_tag(:anomaly_class, anomaly_class["Id"]) %>
+    <%= label_tag(:anomaly_class, anomaly_class["Name"], style: "display: inline") %>
+    <br>
+  <% end %>
+  <br>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
