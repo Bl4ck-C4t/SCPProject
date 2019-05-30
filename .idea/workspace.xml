@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14f88d80-f307-4743-802c-3624aa6b718a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/facilities_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/facilities_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/scp_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/scp_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/development.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db/development.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/vc/vcgiILg1wO98x-a4kX678ASAFWA1cL0iVx07VkHLPqA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/vc/vcgiILg1wO98x-a4kX678ASAFWA1cL0iVx07VkHLPqA.cache" afterDir="false" />
@@ -110,7 +109,21 @@
       <option name="project" value="LOCAL" />
       <updated>1559240262908</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added more database entries and fixed a few bugs">
+      <created>1559246110232</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1559246110232</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added more database entries">
+      <created>1559246302965</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1559246302965</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -148,6 +161,8 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/TheShadow88/SCPProject and Fixed scp facility capacity bug&#10;&#10;# Conflicts:&#10;#&#9;db/development.sqlite3&#10;#&#9;log/development.log" />
     <MESSAGE value="Added staff members to facilities" />
     <MESSAGE value="Added changes to staff members edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added changes to staff members edit" />
+    <MESSAGE value="Added more database entries and fixed a few bugs" />
+    <MESSAGE value="Added more database entries" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more database entries" />
   </component>
 </project>
