@@ -26,8 +26,10 @@ class FacilitiesController < ApplicationController
     @facility = ActiveRecord::Base.connection.exec_insert(query, "show", vals)[0]
     query = "SELECT sc.Id, sc.Name 
              FROM SCP sc
-             INNER JOIN facilities fac ON fac.Id = sc.ClassId;"
-    @scps = ActiveRecord::Base.connection.execute(query)
+             INNER JOIN facilities fac ON fac.Id = sc.FacilityContainedId
+             WHERE fac.Id = ?"
+   vals = [[nil, id]]
+    @scps = ActiveRecord::Base.connection.exec_query(query, "scp query", vals)
   end
 
   # GET /facilities/new

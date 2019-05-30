@@ -31,6 +31,11 @@ class ScpController < ApplicationController
     anomaly_class = params[:anomaly_class]
     facility = params[:facility]
 
+    if facility and is_facility_full(facility)
+        redirect_to controller: "scp", action: "create"
+        return
+    end
+
     query = " INSERT INTO SCP(Name, Description, SecurityClearanceNeeded, ClassId, FacilityContainedId)
               VALUES(?, ?, ?, ?, ?)"
 
@@ -45,8 +50,22 @@ class ScpController < ApplicationController
     
   end
 
+  def is_facility_full(facility)
+    facility_count = "SELECT f.capacity as FacilityCapacity, COUNT(scp.Name) as SCPCount
+                FROM facilities f
+                LEFT JOIN SCP scp ON scp.FacilityContainedId = f.id
+                WHERE f.id = ?;"
+
+    vals = [[nil, facility]]
+    facility_info = ActiveRecord::Base.connection.exec_insert(facility_count, "facility_info", vals)[0]
+    print("faclity id " + facility)
+    print(facility_info )
+    return facility_info["SCPCount"] >= facility_info["FacilityCapacity"]
+  end
+
 
   def create
+
     clearance_query = "SELECT Level, Name FROM SecurityClearance;"
     @clearance_levels = ActiveRecord::Base.connection.execute(clearance_query)
 
@@ -88,6 +107,11 @@ class ScpController < ApplicationController
     clearance_level = params[:clearance_level]
     anomaly_class = params[:anomaly_class]
     facility = params[:facility]
+
+    if facility and is_facility_full(facility)
+        redirect_to controller: "scp", action: "edit", id: id
+        return
+    end
 
     query = " UPDATE SCP
               SET 
