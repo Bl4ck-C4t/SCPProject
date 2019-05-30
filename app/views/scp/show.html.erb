@@ -8,7 +8,7 @@
 <% end %>
 
 <% if @scp["FacilityName"] %>
-	<p>Contained in facility: <%= @scp["FacilityName"] %></p>
+	<p>Contained in facility: <%= link_to @scp["FacilityName"], controller: "facilities", action: "show", id: @scp["FacilityId"] %></p>
 <% end %>
 <br>
 <p><%= @scp["Description"] %></p>

@@ -9,7 +9,8 @@ class ScpController < ApplicationController
     id = params[:id]
 
     query = " SELECT 
-              scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass, f.name AS FacilityName
+              scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass,
+              f.name AS FacilityName, f.id AS FacilityId
 
               FROM SCP scp
               LEFT JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded

@@ -4111,3 +4111,71 @@ Processing by ScpController#index as HTML
 Completed 200 OK in 114ms (Views: 107.9ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/scp" for ::1 at 2019-05-30 11:43:23 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/keepo24/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ScpController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 525ms (Views: 507.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/scp/show?id=3" for ::1 at 2019-05-30 11:43:26 +0300
+Processing by ScpController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mshow (1.4ms)[0m  [1m[34m SELECT 
+              scp.Id, scp.Name, scp.Description, sc.Name AS SecurityClearance, ac.Name as AnomalyClass,
+              f.name AS FacilityName, f.id AS FacilityId
+
+              FROM SCP scp
+              LEFT JOIN SecurityClearance sc ON sc.Level = scp.SecurityClearanceNeeded
+              LEFT JOIN AnomalyClass ac ON ac.Id = scp.ClassId
+              LEFT JOIN facilities f ON f.id = scp.FacilityContainedId
+              WHERE scp.Id = ?;[0m  [[nil, "3"]]
+  ↳ app/controllers/scp_controller.rb:23
+  Rendering scp/show.html.erb within layouts/application
+  Rendered scp/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 72ms (Views: 65.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/facilities/1" for ::1 at 2019-05-30 11:43:27 +0300
+Processing by FacilitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFacility Load (0.5ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/facilities_controller.rb:67
+  Rendering facilities/show.html.erb within layouts/application
+  Rendered facilities/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 146ms (Views: 106.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/facilities/1" for ::1 at 2019-05-30 11:43:33 +0300
+Processing by FacilitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFacility Load (0.3ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/facilities_controller.rb:67
+  Rendering facilities/show.html.erb within layouts/application
+  Rendered facilities/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 102ms (Views: 91.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/facilities" for ::1 at 2019-05-30 11:43:34 +0300
+Processing by FacilitiesController#index as HTML
+  [1m[36mFacility Load (1.7ms)[0m  [1m[34mSELECT * FROM facilities[0m
+  ↳ app/controllers/facilities_controller.rb:8
+  Rendering facilities/index.html.erb within layouts/application
+  Rendered facilities/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 96ms (Views: 85.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/facilities/1" for ::1 at 2019-05-30 11:43:41 +0300
+Processing by FacilitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFacility Load (0.4ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/facilities_controller.rb:67
+  Rendering facilities/show.html.erb within layouts/application
+  Rendered facilities/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 131ms (Views: 122.4ms | ActiveRecord: 0.4ms)
+
+
