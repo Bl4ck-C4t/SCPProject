@@ -36,6 +36,8 @@ class StaffsController < ApplicationController
 
   # GET /staffs/1/edit
   def edit
+    position_query = "SELECT * FROM PositionClearance;"
+    @positions = ActiveRecord::Base.connection.execute(position_query)
   end
 
   # POST /staffs
@@ -60,10 +62,10 @@ class StaffsController < ApplicationController
     name = params[:staff][:name]
     age = params[:staff][:age]
     position = params[:staff][:position]
-        query = "UPDATE staffs SET name = ?, age = ?, position = ? WHERE name = ?;"
+        query = "UPDATE staffs SET name = ?, age = ?, position = ?, FacilityId = ? WHERE name = ?;"
     # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
     #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
-    vals = [[nil, name], [nil, age], [nil, position], [nil, original_name]]
+    vals = [[nil, name], [nil, age], [nil, position], [nil, original_name], [nil, params["facility"]]]
     result = ActiveRecord::Base.connection.exec_update(query, "update", vals)
 
   end

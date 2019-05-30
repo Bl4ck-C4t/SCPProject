@@ -8,9 +8,12 @@
     <%= f.label :age %>
     <%= f.number_field :age %>
 
-    <%= f.label :position %>
-    <%= f.text_field :position %>
-
+    <p>Position: </p>
+  <% for position in @positions %>
+    <%= radio_button_tag(:position, position["PositionName"]) %>
+    <%= label_tag(:position, position["PositionName"], style: "display: inline") %>
+  <% end %>
+  
     <%= f.hidden_field :original_name, value:@staff.name %>
     <%= hidden_field_tag 'selected', 'none'  %>
 
