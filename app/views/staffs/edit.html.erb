@@ -13,7 +13,13 @@
     <%= radio_button_tag(:position, position["PositionName"]) %>
     <%= label_tag(:position, position["PositionName"], style: "display: inline") %>
   <% end %>
-  
+
+  <p>Working at facility: </p>
+  <% for facility in @facilities %>
+    <%= radio_button_tag(:facility, facility["id"]) %>
+    <%= label_tag(:facility, facility["name"], style: "display: inline") %>
+  <% end %>
+
     <%= f.hidden_field :original_name, value:@staff.name %>
     <%= hidden_field_tag 'selected', 'none'  %>
 

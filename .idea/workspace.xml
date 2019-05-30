@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="14f88d80-f307-4743-802c-3624aa6b718a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/facilities_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/facilities_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/staffs_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/staffs_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/facilities/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/facilities/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/staffs/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/staffs/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/development.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db/development.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/staffs/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/staffs/edit.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/vc/vcgiILg1wO98x-a4kX678ASAFWA1cL0iVx07VkHLPqA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/vc/vcgiILg1wO98x-a4kX678ASAFWA1cL0iVx07VkHLPqA.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" afterDir="false" />
@@ -93,7 +89,21 @@
       <option name="project" value="LOCAL" />
       <updated>1559209916583</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added staff members to facilities">
+      <created>1559239682335</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559239682335</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added changes to staff members edit">
+      <created>1559239897820</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1559239897820</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -129,6 +139,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value=" Implemented new field in facilities and listing for scps for each facility" />
     <MESSAGE value="Merge branch 'master' of https://github.com/TheShadow88/SCPProject and Fixed scp facility capacity bug&#10;&#10;# Conflicts:&#10;#&#9;db/development.sqlite3&#10;#&#9;log/development.log" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/TheShadow88/SCPProject and Fixed scp facility capacity bug&#10;&#10;# Conflicts:&#10;#&#9;db/development.sqlite3&#10;#&#9;log/development.log" />
+    <MESSAGE value="Added staff members to facilities" />
+    <MESSAGE value="Added changes to staff members edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added changes to staff members edit" />
   </component>
 </project>
