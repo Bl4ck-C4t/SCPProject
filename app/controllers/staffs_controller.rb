@@ -14,9 +14,9 @@ class StaffsController < ApplicationController
   def show
     id = params[:id]
 
-    query = " SELECT staffs.id, staffs.name, staffs.position, sc.Name AS SecurityClearance, pc.ClearanceLevel AS PositionClearance
+    query = " SELECT staffs.id, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance
               FROM staffs
-              INNER JOIN PositionClearance pc ON pc.PositionName = staffs.position
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
               INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
               WHERE staffs.id = ?;"
 
@@ -49,7 +49,7 @@ class StaffsController < ApplicationController
     age = params[:staff][:age]
     position = params[:position]
     # query = "INSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('" + name +  "',"+ age +",'"+ position +"', '', '')"
-    query = "INSERT INTO staffs(name, age, position, FacilityId) VALUES(?, ?, ?, ?)"
+    query = "INSERT INTO staffs(name, age, positionId, FacilityId) VALUES(?, ?, ?, ?)"
     # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
     #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
     vals = [[nil, name], [nil, age], [nil, position], [nil, params["facility"]]]
@@ -64,11 +64,12 @@ class StaffsController < ApplicationController
     name = params[:staff][:name]
     age = params[:staff][:age]
     position = params[:position]
-        query = "UPDATE staffs SET name = ?, age = ?, position = ?, FacilityId = ? WHERE name = ?;"
+        query = "UPDATE staffs SET name = ?, age = ?, positionId = ?, FacilityId = ? WHERE name = ?;"
     # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
     #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
-    vals = [[nil, name], [nil, age], [nil, position], [nil, original_name], [nil, params["facility"]]]
+    vals = [[nil, name], [nil, age], [nil, position], [nil, params["facility"]], [nil, original_name]]
     result = ActiveRecord::Base.connection.exec_update(query, "update", vals)
+    redirect_to staffs_path()
 
   end
 
@@ -96,6 +97,6 @@ class StaffsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def staff_params
-      params.require(:staff).permit(:name, :age, :position)
+      params.require(:staff).permit(:name, :age, :positionId)
     end
 end

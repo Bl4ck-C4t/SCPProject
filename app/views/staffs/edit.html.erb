@@ -10,7 +10,7 @@
 
     <p>Position: </p>
   <% for position in @positions %>
-    <%= radio_button_tag(:position, position["PositionName"]) %>
+    <%= radio_button_tag(:position, position["PositionId"]) %>
     <%= label_tag(:position, position["PositionName"], style: "display: inline") %>
   <% end %>
 
