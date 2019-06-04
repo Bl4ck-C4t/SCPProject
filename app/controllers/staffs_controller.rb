@@ -1,5 +1,6 @@
 
 class StaffsController < ApplicationController
+  acts_as_token_authentication_handler_for User
   before_action :set_staff, only: [:show, :edit, :update, :destroy]
 
   # GET /staffs
