@@ -6,8 +6,24 @@ class StaffsController < ApplicationController
   # GET /staffs
   # GET /staffs.json
   def index
-    query = "SELECT * FROM staffs"
-    @staffs = Staff.find_by_sql(query)
+    id = params[:id]
+    if(params["page"])
+      page = params["page"]
+    else
+      page = 0
+    end
+
+    if(params["limit"])
+      limit = params["limit"]
+    else
+      limit = 2
+    end
+
+    query = "SELECT * FROM staffs LIMIT ? OFFSET ?"
+    # query2 = "SELECT * FROM facilities"
+    # @facilities2 = Facility.find_by_sql(query2)
+    vals = [[nil, limit], [nil, page.to_i*limit]]
+    @staffs = ActiveRecord::Base.connection.exec_query(query, "all staffs", vals)
   end
 
   # GET /staffs/1

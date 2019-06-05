@@ -15,12 +15,12 @@
   <tbody>
     <% @staffs.each do |staff| %>
       <tr>
-        <td><%= staff.name %></td>
-        <td><%= staff.age %></td>
-        <td><%= staff.positionId %></td>
+        <td><%= staff["name"] %></td>
+        <td><%= staff["age"] %></td>
+        <td><%= staff["positionId"] %></td>
         <td><%= link_to 'Show', staff %></td>
-        <td><%= link_to 'Edit', edit_staff_path(staff) %></td>
-        <td><%= link_to 'Destroy', staff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', "/staffs/" + staff["id"].to_s + "/edit" %></td>
+        <td><%= link_to 'Destroy', "/staffs/" + staff["id"].to_s, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
