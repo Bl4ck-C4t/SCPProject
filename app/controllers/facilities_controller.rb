@@ -46,7 +46,6 @@ class FacilitiesController < ApplicationController
              FROM SCP sc
              INNER JOIN facilities fac ON fac.Id = sc.FacilityContainedId
              WHERE fac.Id = ?"
-   vals = [[nil, id]]
     @scps = ActiveRecord::Base.connection.exec_query(query, "scp query", vals)
     @staff = []
     if(params[:api])
@@ -58,14 +57,13 @@ class FacilitiesController < ApplicationController
       return
     end
 
-   #  query = "SELECT st.name, st.position, st.id
-   #           FROM staffs st
-   #           INNER JOIN facilities fac ON fac.Id = st.FacilityId
-   #           WHERE fac.Id = ?"
-   # vals = [[nil, id]]
-   #  @staff = ActiveRecord::Base.connection.exec_query(query, "staff query", vals)
+    query = "SELECT st.name, st.id
+             FROM staffs st
+             INNER JOIN facilities fac ON fac.Id = st.FacilityId
+             WHERE fac.Id = ?"
+   @staff = ActiveRecord::Base.connection.exec_query(query, "staff query", vals)
 
-    # puts @staff
+    puts @staff
     
   end
 

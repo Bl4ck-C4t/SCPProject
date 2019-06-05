@@ -18,7 +18,7 @@
         <td><%= staff["name"] %></td>
         <td><%= staff["age"] %></td>
         <td><%= staff["positionId"] %></td>
-        <td><%= link_to 'Show', staff %></td>
+        <td><%= link_to 'Show', "/staffs/" + staff["id"].to_s %></td>
         <td><%= link_to 'Edit', "/staffs/" + staff["id"].to_s + "/edit" %></td>
         <td><%= link_to 'Destroy', "/staffs/" + staff["id"].to_s, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
