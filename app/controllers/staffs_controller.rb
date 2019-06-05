@@ -1,7 +1,11 @@
 
 class StaffsController < ApplicationController
-  acts_as_token_authentication_handler_for User
-  before_action :set_staff, only: [:show, :edit, :update, :destroy]
+  acts_as_token_authentication_handler_for User, fallback: :permission_denied
+  before_action :set_staff, only: [:show, :edit, :update, :destroy]  
+
+  def permission_denied
+    redirect_to(root_path, status: 401)
+  end
 
   # GET /staffs
   # GET /staffs.json
@@ -15,10 +19,11 @@ class StaffsController < ApplicationController
   def show
     id = params[:id]
 
-    query = " SELECT staffs.id, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance
+    query = " SELECT staffs.id, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
               FROM staffs
               INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
               INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
               WHERE staffs.id = ?;"
 
     vals = [[nil, id]]
