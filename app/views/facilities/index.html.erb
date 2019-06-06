@@ -28,6 +28,6 @@
 
 <%= link_to 'New Facility', new_facility_path %>
 
-<%= button_to "Prev", facilities_path(), method: :get, params:  {"page": [@page-1, 0].max} %>
+<%= button_to "Prev", facilities_path(), method: :get, params:  {"page": [@page-1, 0].max, "limit": @limit} %>
 <%= @page + 1 %>
-<%= button_to "Next", facilities_path(), method: :get, params:  {"page": [@page+1, @total_pages-1].min}%>
+<%= button_to "Next", facilities_path(), method: :get, params:  {"page": [@page+1, @total_pages-1].min,"limit": @limit}%>
