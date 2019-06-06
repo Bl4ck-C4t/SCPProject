@@ -1,5 +1,5 @@
 class FacilitiesController < ApplicationController
-  acts_as_token_authentication_handler_for User, fallback: :permission_denied
+  # acts_as_token_authentication_handler_for User, fallback: :permission_denied
   before_action :set_facility, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
   # GET /facilities
@@ -123,18 +123,17 @@ class FacilitiesController < ApplicationController
   # PATCH/PUT /facilities/1.json
   def update # add anomaly class update
     id = params[:id]
+    anomaly_class = params["anomaly_class"]
     if(params["api"])
       name = params[:name]
       capacity = params[:capacity]
     else
     name = params[:facility][:name]
     capacity = params[:facility][:capacity]
-    anomaly_class = params[:anomaly_class]
       
     end
-    
-    query = "UPDATE facilities SET name=?, capacity=? where id = ?;"
-    vals = [[nil, name], [nil, capacity], [nil, id]]
+    query = "UPDATE facilities SET name=?, ClassId=?, capacity=? where id = ?;"
+    vals = [[nil, name], [nil, anomaly_class], [nil, capacity],  [nil, id]]
     result = ActiveRecord::Base.connection.exec_update(query, "update facility", vals)
     if(params["api"])
       head :ok
