@@ -1,7 +1,8 @@
 
 class StaffsController < ApplicationController
   acts_as_token_authentication_handler_for User, fallback: :permission_denied
-  before_action :set_staff, only: [:show, :edit, :update, :destroy]  
+  before_action :set_staff, only: [:show, :edit, :update, :destroy] 
+  skip_before_action :verify_authenticity_token 
 
   def permission_denied
     redirect_to(root_path, status: 401)
@@ -35,7 +36,7 @@ class StaffsController < ApplicationController
   def show
     id = params[:id]
 
-    query = " SELECT staffs.id, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+    query = " SELECT staffs.id, staffs.age, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
               FROM staffs
               INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
               INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
@@ -45,6 +46,17 @@ class StaffsController < ApplicationController
     vals = [[nil, id]]
 
     @staff = ActiveRecord::Base.connection.exec_insert(query, "show", vals)[0]
+
+    if(params[:api])
+      render json: { 
+             "name" => @staff["name"],
+             "age" => @staff["age"],
+             "PositionClearance" => @staff["PositionClearance"],
+	     "FacilityName" => @staff["FacilityName"]
+          }.to_json, status: 200
+      return
+    end
+
   end
 
   # GET /staffs/new
@@ -67,38 +79,67 @@ class StaffsController < ApplicationController
   # POST /staffs
   # POST /staffs.json
   def create
-    name = params[:staff][:name]
-    age = params[:staff][:age]
-    position = params[:position]
+   if(params["api"])
+      name = params[:name]
+      age = params[:age]
+      position = params[:position]
+    else
+      name = params[:staff][:name]
+      age = params[:staff][:age]
+      position = params[:position]
+    end
+    
     # query = "INSERT INTO staffs(name, age, position, created_at, updated_at) VALUES('" + name +  "',"+ age +",'"+ position +"', '', '')"
     query = "INSERT INTO staffs(name, age, positionId, FacilityId) VALUES(?, ?, ?, ?)"
     # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
     #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
     vals = [[nil, name], [nil, age], [nil, position], [nil, params["facility"]]]
     result = ActiveRecord::Base.connection.exec_insert(query, "insert", vals)
-    redirect_to staffs_path()
+    if(params["api"])
+      head :created, location: "Somewhere"
+      return
+    else
+      redirect_to staffs_path()
+    end
   end
 
   # PATCH/PUT /staffs/1
   # PATCH/PUT /staffs/1.json
   def update
-    original_name = params[:staff][:original_name]
-    name = params[:staff][:name]
-    age = params[:staff][:age]
-    position = params[:position]
-        query = "UPDATE staffs SET name = ?, age = ?, positionId = ?, FacilityId = ? WHERE name = ?;"
+    id = params[:id]
+    if(params["api"])
+      name = params["name"]
+      age = params["age"].to_i
+      position = params["position"].to_i
+    else
+      name = params[:staff][:name]
+      age = params[:staff][:age]
+      position = params[:position]
+    end
+    
+        query = "UPDATE staffs SET name = ?, age = ?, positionId = ?, FacilityId = ? WHERE id = ?;"
     # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
     #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
-    vals = [[nil, name], [nil, age], [nil, position], [nil, params["facility"]], [nil, original_name]]
+    vals = [[nil, name], [nil, age], [nil, position], [nil, params["facility"].to_i], [nil, id]]
     result = ActiveRecord::Base.connection.exec_update(query, "update", vals)
-    redirect_to staffs_path()
+    if(params["api"])
+      head :updated, location: "Somewhere"
+      return
+    else
+      redirect_to staffs_path()
+    end
 
   end
 
   # DELETE /staffs/1
   # DELETE /staffs/1.json
   def destroy
-    id = @staff.id
+
+    if(params["api"])
+      id = params[:id]
+    else
+      id = @staff.id
+    end
     query = "DELETE FROM staffs WHERE id = ?;"
     # vals = [ActiveRecord::Relation::QueryAttribute.new("String", name, Type::Value.new), Relation::QueryAttribute.new("number", age, Type::Value.new), 
     #   Relation::QueryAttribute.new("String", position, Type::Value.new)]

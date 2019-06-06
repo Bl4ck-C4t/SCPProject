@@ -1,8 +1,14 @@
 class FacilitiesController < ApplicationController
+  acts_as_token_authentication_handler_for User, fallback: :permission_denied
   before_action :set_facility, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
   # GET /facilities
   # GET /facilities.json
+
+  def permission_denied
+    redirect_to(root_path, status: 401)
+  end
+
   def index
     id = params[:id]
     if(params["limit"])

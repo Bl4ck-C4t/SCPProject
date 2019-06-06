@@ -8354,3 +8354,1596 @@ Processing by StaffsController#index as HTML
 Completed 200 OK in 40ms (Views: 36.2ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/staffs?user_email=tonipelovski@gmail.com&user_token=tDLsjGgGX1VzisV2p5Ut" for 127.0.0.1 at 2019-06-06 10:33:27 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaffsController#index as HTML
+  Parameters: {"user_email"=>"tonipelovski@gmail.com", "user_token"=>"tDLsjGgGX1VzisV2p5Ut"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:30
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 267ms (Views: 222.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/staffs?user_email=tonipelovski@gmail.com&user_token=tDLsjGgGX1VzisV2p5Ut" for 127.0.0.1 at 2019-06-06 10:33:31 +0300
+Processing by StaffsController#index as HTML
+  Parameters: {"user_email"=>"tonipelovski@gmail.com", "user_token"=>"tDLsjGgGX1VzisV2p5Ut"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.2ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:30
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 75ms (Views: 69.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs/5" for 127.0.0.1 at 2019-06-06 10:33:32 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[36mshow (0.5ms)[0m  [1m[34m SELECT staffs.id, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "5"]]
+  ↳ app/controllers/staffs_controller.rb:47
+  Rendering staffs/show.html.erb within layouts/application
+  Rendered staffs/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 70ms (Views: 48.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 10:33:34 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.3ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:30
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 67ms (Views: 62.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/4" for 127.0.0.1 at 2019-06-06 10:33:35 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[36mshow (0.3ms)[0m  [1m[34m SELECT staffs.id, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:47
+  Rendering staffs/show.html.erb within layouts/application
+  Rendered staffs/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 60ms (Views: 51.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 10:33:36 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.2ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:30
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 75ms (Views: 70.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs/4/edit" for 127.0.0.1 at 2019-06-06 10:33:37 +0300
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/staffs_controller.rb:73
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT * FROM PositionClearance;[0m
+  ↳ app/controllers/staffs_controller.rb:75
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 69ms (Views: 40.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 10:33:39 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:30
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 50ms (Views: 43.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs/5/edit" for 127.0.0.1 at 2019-06-06 10:33:42 +0300
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/staffs_controller.rb:73
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT * FROM PositionClearance;[0m
+  ↳ app/controllers/staffs_controller.rb:75
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 45ms (Views: 38.4ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/staffs/5" for 127.0.0.1 at 2019-06-06 10:33:49 +0300
+Processing by StaffsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9p+Y3Wf26fpKPLOHxxkqosRsu0FhPFIQdqaHiXWAHau5bN4Wsa/SiG2ljFT7B6lX3NakTkwWvtx3i6C6hGk/EQ==", "staff"=>{"name"=>"Stefo", "age"=>"17", "original_name"=>"Stefo"}, "position"=>"5", "facility"=>"5", "selected"=>"none", "commit"=>"Continue", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.1ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[36mupdate (0.2ms)[0m  [1m[33mUPDATE staffs SET name = ?, age = ?, positionId = ?, FacilityId = ? WHERE id = ?;[0m  [[nil, "Stefo"], [nil, "17"], [nil, "5"], [nil, "5"], [nil, nil]]
+  ↳ app/controllers/staffs_controller.rb:123
+Redirected to http://localhost:3000/staffs
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 10:33:49 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.3ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:30
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 34.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs/5" for 127.0.0.1 at 2019-06-06 10:33:53 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[36mshow (0.3ms)[0m  [1m[34m SELECT staffs.id, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "5"]]
+  ↳ app/controllers/staffs_controller.rb:47
+  Rendering staffs/show.html.erb within layouts/application
+  Rendered staffs/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 53ms (Views: 47.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 10:33:54 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:30
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 50ms (Views: 43.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/staffs/new" for 127.0.0.1 at 2019-06-06 10:33:57 +0300
+Processing by StaffsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT id, name FROM facilities;[0m
+  ↳ app/controllers/staffs_controller.rb:65
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT * FROM PositionClearance;[0m
+  ↳ app/controllers/staffs_controller.rb:67
+  Rendering staffs/new.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (6.8ms)
+  Rendered staffs/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 50ms (Views: 42.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2019-06-06 10:34:05 +0300
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xOo7O7LDGR1mFm0rjZO4dODwa8Agn8GGFaYW1YD393/w6sVmIkW2vjJ7tUzfVV2TjyajuMtlbkUuY9rYkm7qSw==", "staff"=>{"name"=>"gsfdfsg", "age"=>"432"}, "position"=>"2", "facility"=>"2", "commit"=>"Create Staff"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36minsert (81.6ms)[0m  [1m[32mINSERT INTO staffs(name, age, positionId, FacilityId) VALUES(?, ?, ?, ?)[0m  [[nil, "gsfdfsg"], [nil, "432"], [nil, "2"], [nil, "2"]]
+  ↳ app/controllers/staffs_controller.rb:96
+Redirected to http://localhost:3000/staffs
+Completed 302 Found in 89ms (ActiveRecord: 81.9ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 10:34:05 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:30
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 38ms (Views: 32.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/staffs?limit=5" for 127.0.0.1 at 2019-06-06 10:36:33 +0300
+Processing by StaffsController#index as HTML
+  Parameters: {"limit"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+TypeError (String can't be coerced into Integer):
+  
+app/controllers/staffs_controller.rb:29:in `*'
+app/controllers/staffs_controller.rb:29:in `index'
+Started GET "/staffs?page=1&limit=5" for 127.0.0.1 at 2019-06-06 10:36:42 +0300
+Processing by StaffsController#index as HTML
+  Parameters: {"page"=>"1", "limit"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+TypeError (String can't be coerced into Integer):
+  
+app/controllers/staffs_controller.rb:29:in `*'
+app/controllers/staffs_controller.rb:29:in `index'
+Started GET "/staffs?page=1" for 127.0.0.1 at 2019-06-06 10:37:00 +0300
+Processing by StaffsController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.2ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 2]]
+  ↳ app/controllers/staffs_controller.rb:30
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 41ms (Views: 37.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs?page=2" for 127.0.0.1 at 2019-06-06 10:37:03 +0300
+Processing by StaffsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 4]]
+  ↳ app/controllers/staffs_controller.rb:30
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 48ms (Views: 41.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/staffs/8" for 127.0.0.1 at 2019-06-06 10:37:08 +0300
+Processing by StaffsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Gb1oelcayYQnRyQ9jyVAhKGgFW6oXIG9s0metPjdRbhbF6juQGXN43W0lKMRWKsFHl0nUKDaMooUONORiRGdIg==", "id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[36minsert (68.5ms)[0m  [1m[31mDELETE FROM staffs WHERE id = ?;[0m  [[nil, "8"]]
+  ↳ app/controllers/staffs_controller.rb:146
+Redirected to http://localhost:3000/staffs
+Completed 302 Found in 76ms (ActiveRecord: 68.9ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 10:37:08 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:30
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 38ms (Views: 33.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/staffs/1?api=true" for ::1 at 2019-06-06 10:37:21 +0300
+Processing by StaffsController#show as */*
+  Parameters: {"api"=>"true", "id"=>"1"}
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-06-06 10:37:21 +0300
+Processing by Devise::SessionsController#new as */*
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs/1?api=true" for ::1 at 2019-06-06 10:37:49 +0300
+Processing by StaffsController#show as */*
+  Parameters: {"api"=>"true", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+Completed 404 Not Found in 7ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Staff with 'id'=1):
+  
+app/controllers/staffs_controller.rb:157:in `set_staff'
+Started GET "/staffs?api=true" for ::1 at 2019-06-06 10:38:13 +0300
+Processing by StaffsController#index as */*
+  Parameters: {"api"=>"true"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:30
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 66ms (Views: 52.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs?api=true" for 127.0.0.1 at 2019-06-06 10:39:15 +0300
+Processing by StaffsController#index as HTML
+  Parameters: {"api"=>"true"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.3ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:30
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/1?api=true" for 127.0.0.1 at 2019-06-06 10:40:06 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"api"=>"true", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Staff with 'id'=1):
+  
+app/controllers/staffs_controller.rb:157:in `set_staff'
+Started GET "/staffs/2?api=true" for 127.0.0.1 at 2019-06-06 10:40:11 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"api"=>"true", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.1ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Staff with 'id'=2):
+  
+app/controllers/staffs_controller.rb:157:in `set_staff'
+Started GET "/staffs/0?api=true" for 127.0.0.1 at 2019-06-06 10:40:15 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"api"=>"true", "id"=>"0"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.1ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Staff with 'id'=0):
+  
+app/controllers/staffs_controller.rb:157:in `set_staff'
+Started GET "/staffs/3?api=true" for 127.0.0.1 at 2019-06-06 10:40:18 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"api"=>"true", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.1ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Staff with 'id'=3):
+  
+app/controllers/staffs_controller.rb:157:in `set_staff'
+Started GET "/staffs/4?api=true" for 127.0.0.1 at 2019-06-06 10:40:21 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"api"=>"true", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[36mshow (0.5ms)[0m  [1m[34m SELECT staffs.id, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:47
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs/5?api=true" for 127.0.0.1 at 2019-06-06 10:41:32 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"api"=>"true", "id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[36mshow (0.4ms)[0m  [1m[34m SELECT staffs.id, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "5"]]
+  ↳ app/controllers/staffs_controller.rb:47
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs/6?api=true" for 127.0.0.1 at 2019-06-06 10:41:35 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"api"=>"true", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.1ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[36mshow (0.3ms)[0m  [1m[34m SELECT staffs.id, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "6"]]
+  ↳ app/controllers/staffs_controller.rb:47
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/staffs_controller.rb:51:in `show'
+Started GET "/staffs/7?api=true" for 127.0.0.1 at 2019-06-06 10:41:42 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"api"=>"true", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[36mshow (0.3ms)[0m  [1m[34m SELECT staffs.id, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "7"]]
+  ↳ app/controllers/staffs_controller.rb:47
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 10:42:19 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.3ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:30
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 59ms (Views: 33.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/staffs/1?api=true" for 127.0.0.1 at 2019-06-06 10:42:34 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"api"=>"true", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+Completed 404 Not Found in 12ms (ActiveRecord: 2.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Staff with 'id'=1):
+  
+app/controllers/staffs_controller.rb:157:in `set_staff'
+Started GET "/staffs/4?api=true" for 127.0.0.1 at 2019-06-06 10:42:40 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"api"=>"true", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[36mshow (0.4ms)[0m  [1m[34m SELECT staffs.id, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:47
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs/4" for 127.0.0.1 at 2019-06-06 10:43:19 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[36mshow (1.7ms)[0m  [1m[34m SELECT staffs.id, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:47
+  Rendering staffs/show.html.erb within layouts/application
+  Rendered staffs/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 82ms (Views: 72.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/staffs/4" for 127.0.0.1 at 2019-06-06 10:44:03 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[36mshow (0.4ms)[0m  [1m[34m SELECT staffs.id, staffs.age, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:47
+  Rendering staffs/show.html.erb within layouts/application
+  Rendered staffs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 67ms (Views: 31.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/staffs/4?api=true" for 127.0.0.1 at 2019-06-06 10:44:07 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"api"=>"true", "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[36mshow (0.3ms)[0m  [1m[34m SELECT staffs.id, staffs.age, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:47
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs/4?api=true" for 127.0.0.1 at 2019-06-06 10:44:17 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"api"=>"true", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:157
+  [1m[36mshow (0.3ms)[0m  [1m[34m SELECT staffs.id, staffs.age, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:47
+Completed 200 OK in 50ms (Views: 0.2ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/staffs/?api=true&name=idiot&age=50&position=1&facility=4" for ::1 at 2019-06-06 10:48:19 +0300
+Processing by StaffsController#create as */*
+  Parameters: {"api"=>"true", "name"=>"idiot", "age"=>"50", "position"=>"1", "facility"=>"4"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.6.2) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/staffs/?api=true&name=%22idiot%22&age=50&position=1&facility=4" for ::1 at 2019-06-06 10:48:30 +0300
+Processing by StaffsController#create as */*
+  Parameters: {"api"=>"true", "name"=>"\"idiot\"", "age"=>"50", "position"=>"1", "facility"=>"4"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.6.2) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/staffs/?api=true&name=%22idiot%22&age=50&position=1&facility=4" for ::1 at 2019-06-06 10:49:15 +0300
+Processing by StaffsController#create as */*
+  Parameters: {"api"=>"true", "name"=>"\"idiot\"", "age"=>"50", "position"=>"1", "facility"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36minsert (79.7ms)[0m  [1m[32mINSERT INTO staffs(name, age, positionId, FacilityId) VALUES(?, ?, ?, ?)[0m  [[nil, "\"idiot\""], [nil, "50"], [nil, "1"], [nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:97
+Completed 201 Created in 104ms (ActiveRecord: 81.5ms)
+
+
+Started GET "/staffs?page=2" for 127.0.0.1 at 2019-06-06 10:49:29 +0300
+Processing by StaffsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.3ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 4]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 52ms (Views: 45.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs/9" for 127.0.0.1 at 2019-06-06 10:49:32 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+  [1m[36mshow (0.5ms)[0m  [1m[34m SELECT staffs.id, staffs.age, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "9"]]
+  ↳ app/controllers/staffs_controller.rb:48
+  Rendering staffs/show.html.erb within layouts/application
+  Rendered staffs/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 59ms (Views: 36.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 10:49:33 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 76ms (Views: 70.0ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/staffs/?api=true&name=%22idiot%22&age=50&position=2&facility=4" for ::1 at 2019-06-06 10:49:46 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/staffs"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PUT "/staffs/?api=true&name=%22idiot%22&age=50&position=2&facility=4" for ::1 at 2019-06-06 10:51:00 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/staffs"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PUT "/staffs/?api=true&id=8&name=%22idiot%22&age=50&position=2&facility=4" for ::1 at 2019-06-06 10:51:23 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/staffs"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PUT "/staffs/?api=true&id=9&name=%22idiot%22&age=50&position=2&facility=4" for ::1 at 2019-06-06 10:51:28 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/staffs"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PUT "/staffs/?api=true&id=7&name=%22idiot%22&age=50&position=2&facility=4" for ::1 at 2019-06-06 10:51:35 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/staffs"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PUT "/staffs/?api=true&id=4&name=%22idiot%22&age=50&position=2&facility=4" for ::1 at 2019-06-06 10:51:41 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/staffs"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/staffs/5" for 127.0.0.1 at 2019-06-06 10:52:01 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+  [1m[36mshow (0.3ms)[0m  [1m[34m SELECT staffs.id, staffs.age, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "5"]]
+  ↳ app/controllers/staffs_controller.rb:48
+  Rendering staffs/show.html.erb within layouts/application
+  Rendered staffs/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 59ms (Views: 28.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 10:52:07 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 41ms (Views: 33.8ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/staffs/?api=true&id=8&name=%22idiot%22&age=50&position=2&facility=4" for ::1 at 2019-06-06 10:55:10 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/staffs"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PUT "/staffs/?api=true&id=4&name=%22idiot%22&age=50&position=2&facility=4" for ::1 at 2019-06-06 10:55:18 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/staffs"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PUT "/staffs/8/?api=true&name=%22idiot%22&age=50&position=2&facility=4" for ::1 at 2019-06-06 10:56:07 +0300
+Processing by StaffsController#update as */*
+  Parameters: {"api"=>"true", "name"=>"\"idiot\"", "age"=>"50", "position"=>"2", "facility"=>"4", "id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.1ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+Completed 404 Not Found in 23ms (ActiveRecord: 1.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Staff with 'id'=8):
+  
+app/controllers/staffs_controller.rb:158:in `set_staff'
+Started PUT "/staffs/4/?api=true&name=%22idiot%22&age=50&position=2&facility=4" for ::1 at 2019-06-06 10:56:13 +0300
+Processing by StaffsController#update as */*
+  Parameters: {"api"=>"true", "name"=>"\"idiot\"", "age"=>"50", "position"=>"2", "facility"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/staffs_controller.rb:109:in `update'
+Started PUT "/staffs/4/?api=true&name=%22idiot%22&age=50&position=2&facility=4" for ::1 at 2019-06-06 10:57:44 +0300
+Processing by StaffsController#update as */*
+  Parameters: {"api"=>"true", "name"=>"\"idiot\"", "age"=>"50", "position"=>"2", "facility"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.2ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/staffs_controller.rb:109:in `update'
+Started PUT "/staffs/4?api=true&name=%22idiot%22&age=50&position=2&facility=4" for ::1 at 2019-06-06 10:58:46 +0300
+Processing by StaffsController#update as */*
+  Parameters: {"api"=>"true", "name"=>"\"idiot\"", "age"=>"50", "position"=>"2", "facility"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/staffs_controller.rb:109:in `update'
+Started PUT "/staffs/4?api=true&name=idiot&age=50&position=2&facility=4" for ::1 at 2019-06-06 10:59:22 +0300
+Processing by StaffsController#update as */*
+  Parameters: {"api"=>"true", "name"=>"idiot", "age"=>"50", "position"=>"2", "facility"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 2.2ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/staffs_controller.rb:109:in `update'
+Started PUT "/staffs/4?api=true&name=idiot&age=50&position=2&facility=4" for ::1 at 2019-06-06 10:59:59 +0300
+Processing by StaffsController#update as */*
+  Parameters: {"api"=>"true", "name"=>"idiot", "age"=>"50", "position"=>"2", "facility"=>"4", "id"=>"4"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/staffs_controller.rb:109:in `update'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 11:00:20 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.2ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 38ms (Views: 34.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 11:00:22 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 38ms (Views: 32.5ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/staffs/4?api=true&name=idiot&age=50&position=2&facility=4" for ::1 at 2019-06-06 11:00:41 +0300
+Processing by StaffsController#update as */*
+  Parameters: {"api"=>"true", "name"=>"idiot", "age"=>"50", "position"=>"2", "facility"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/staffs_controller.rb:109:in `update'
+Started PUT "/staffs/4?api=true&name=idiot&age=50&position=2&facility=4" for ::1 at 2019-06-06 11:01:39 +0300
+Processing by StaffsController#update as */*
+  Parameters: {"api"=>"true", "name"=>"idiot", "age"=>"50", "position"=>"2", "facility"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+  [1m[36mupdate (88.6ms)[0m  [1m[33mUPDATE staffs SET name = ?, age = ?, positionId = ?, FacilityId = ? WHERE id = ?;[0m  [[nil, "idiot"], [nil, 50], [nil, 2], [nil, 4], [nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:124
+Completed 201 Created in 124ms (ActiveRecord: 90.5ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 11:02:20 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 71ms (Views: 48.0ms | ActiveRecord: 1.6ms)
+
+
+Started PUT "/staffs/4?api=true&name=Toni%25Pelovski&age=18&position=1&facility=4" for ::1 at 2019-06-06 11:02:42 +0300
+Processing by StaffsController#update as */*
+  Parameters: {"api"=>"true", "name"=>"Toni%Pelovski", "age"=>"18", "position"=>"1", "facility"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:160
+  [1m[36mupdate (178.0ms)[0m  [1m[33mUPDATE staffs SET name = ?, age = ?, positionId = ?, FacilityId = ? WHERE id = ?;[0m  [[nil, "Toni%Pelovski"], [nil, 18], [nil, 1], [nil, 4], [nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:126
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 180.0ms)
+
+
+Started PUT "/staffs/4?api=true&name=Toni%25Pelovski&age=18&position=1&facility=4" for ::1 at 2019-06-06 11:03:29 +0300
+Processing by StaffsController#update as */*
+  Parameters: {"api"=>"true", "name"=>"Toni%Pelovski", "age"=>"18", "position"=>"1", "facility"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:160
+  [1m[36mupdate (56.6ms)[0m  [1m[33mUPDATE staffs SET name = ?, age = ?, positionId = ?, FacilityId = ? WHERE id = ?;[0m  [[nil, "Toni%Pelovski"], [nil, 18], [nil, 1], [nil, 4], [nil, 4]]
+  ↳ app/controllers/staffs_controller.rb:126
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 60.1ms)
+
+
+Started PUT "/staffs/4?api=true&name=Toni&age=18&position=1&facility=4" for ::1 at 2019-06-06 11:04:01 +0300
+Processing by StaffsController#update as */*
+  Parameters: {"api"=>"true", "name"=>"Toni", "age"=>"18", "position"=>"1", "facility"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:160
+  [1m[36mupdate (110.0ms)[0m  [1m[33mUPDATE staffs SET name = ?, age = ?, positionId = ?, FacilityId = ? WHERE id = ?;[0m  [[nil, "Toni"], [nil, 18], [nil, 1], [nil, 4], [nil, 4]]
+  ↳ app/controllers/staffs_controller.rb:126
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 110.5ms)
+
+
+Started PUT "/staffs/4?api=true&name=Toni&age=18&position=1&facility=4" for ::1 at 2019-06-06 11:04:26 +0300
+Processing by StaffsController#update as */*
+  Parameters: {"api"=>"true", "name"=>"Toni", "age"=>"18", "position"=>"1", "facility"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:160
+  [1m[36mupdate (62.6ms)[0m  [1m[33mUPDATE staffs SET name = ?, age = ?, positionId = ?, FacilityId = ? WHERE id = ?;[0m  [[nil, "Toni"], [nil, 18], [nil, 1], [nil, 4], [nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:126
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 66.2ms)
+
+
+Started PUT "/staffs/4?api=true&name=Toni&age=18&position=1&facility=4" for ::1 at 2019-06-06 11:04:48 +0300
+Processing by StaffsController#update as */*
+  Parameters: {"api"=>"true", "name"=>"Toni", "age"=>"18", "position"=>"1", "facility"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+  [1m[36mupdate (58.1ms)[0m  [1m[33mUPDATE staffs SET name = ?, age = ?, positionId = ?, FacilityId = ? WHERE id = ?;[0m  [[nil, "Toni"], [nil, 18], [nil, 1], [nil, 4], [nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:124
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 60.7ms)
+
+
+Started GET "/staffs/4" for 127.0.0.1 at 2019-06-06 11:06:20 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+  [1m[36mshow (0.4ms)[0m  [1m[34m SELECT staffs.id, staffs.age, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:48
+  Rendering staffs/show.html.erb within layouts/application
+  Rendered staffs/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 42ms (Views: 34.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 11:06:25 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.9ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 57ms (Views: 50.2ms | ActiveRecord: 1.3ms)
+
+
+Started PUT "/staffs/4?api=true&name=Toni&age=18&position=1&facility=3" for ::1 at 2019-06-06 11:06:54 +0300
+Processing by StaffsController#update as */*
+  Parameters: {"api"=>"true", "name"=>"Toni", "age"=>"18", "position"=>"1", "facility"=>"3", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+  [1m[36mupdate (134.5ms)[0m  [1m[33mUPDATE staffs SET name = ?, age = ?, positionId = ?, FacilityId = ? WHERE id = ?;[0m  [[nil, "Toni"], [nil, 18], [nil, 1], [nil, 3], [nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:124
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 135.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 11:07:03 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.2ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 42ms (Views: 38.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs/4" for 127.0.0.1 at 2019-06-06 11:07:04 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+  [1m[36mshow (0.5ms)[0m  [1m[34m SELECT staffs.id, staffs.age, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+              FROM staffs
+              INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
+              INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
+	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+              WHERE staffs.id = ?;[0m  [[nil, "4"]]
+  ↳ app/controllers/staffs_controller.rb:48
+  Rendering staffs/show.html.erb within layouts/application
+  Rendered staffs/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 55ms (Views: 43.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 11:07:08 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 44ms (Views: 38.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs?page=3" for 127.0.0.1 at 2019-06-06 11:07:30 +0300
+Processing by StaffsController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.3ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 6]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 38ms (Views: 33.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs?page=2" for 127.0.0.1 at 2019-06-06 11:07:32 +0300
+Processing by StaffsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 4]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 39ms (Views: 33.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/staffs/9" for 127.0.0.1 at 2019-06-06 11:07:41 +0300
+Processing by StaffsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"A3w6AqvPliD86rL4h2F9kKmVrNo7sRLbgaRMbY3PrDRB1vqWvLCSR64ZAmYZHJYRFmie5DM3oewm1QFI/AN0rg==", "id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.1ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+  [1m[36minsert (73.5ms)[0m  [1m[31mDELETE FROM staffs WHERE id = ?;[0m  [[nil, "9"]]
+  ↳ app/controllers/staffs_controller.rb:147
+Redirected to http://localhost:3000/staffs
+Completed 302 Found in 81ms (ActiveRecord: 73.9ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 11:07:42 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.3ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 36ms (Views: 31.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/staffs?api=true&name=Toni&age=18&position=1&facility=3" for ::1 at 2019-06-06 11:08:01 +0300
+Processing by StaffsController#create as */*
+  Parameters: {"api"=>"true", "name"=>"Toni", "age"=>"18", "position"=>"1", "facility"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36minsert (138.5ms)[0m  [1m[32mINSERT INTO staffs(name, age, positionId, FacilityId) VALUES(?, ?, ?, ?)[0m  [[nil, "Toni"], [nil, "18"], [nil, "1"], [nil, "3"]]
+  ↳ app/controllers/staffs_controller.rb:97
+Completed 201 Created in 143ms (ActiveRecord: 139.0ms)
+
+
+Started GET "/staffs?page=2" for 127.0.0.1 at 2019-06-06 11:08:18 +0300
+Processing by StaffsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.2ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 4]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/staffs/8?api=true" for ::1 at 2019-06-06 11:08:46 +0300
+Processing by StaffsController#destroy as */*
+  Parameters: {"api"=>"true", "id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+Completed 404 Not Found in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Staff with 'id'=8):
+  
+app/controllers/staffs_controller.rb:158:in `set_staff'
+Started DELETE "/staffs/7?api=true" for ::1 at 2019-06-06 11:08:52 +0300
+Processing by StaffsController#destroy as */*
+  Parameters: {"api"=>"true", "id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+  [1m[36minsert (142.3ms)[0m  [1m[31mDELETE FROM staffs WHERE id = ?;[0m  [[nil, "7"]]
+  ↳ app/controllers/staffs_controller.rb:147
+Redirected to http://localhost:3000/staffs
+Completed 302 Found in 151ms (ActiveRecord: 142.9ms)
+
+
+Started GET "/staffs" for ::1 at 2019-06-06 11:08:52 +0300
+Processing by StaffsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.2ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 51ms (Views: 40.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs?page=2" for 127.0.0.1 at 2019-06-06 11:09:06 +0300
+Processing by StaffsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.2ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 4]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 38ms (Views: 33.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs?page=1" for 127.0.0.1 at 2019-06-06 11:09:08 +0300
+Processing by StaffsController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 2]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 40ms (Views: 35.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs?page=0" for 127.0.0.1 at 2019-06-06 11:09:13 +0300
+Processing by StaffsController#index as HTML
+  Parameters: {"page"=>"0"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.3ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 42ms (Views: 37.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs?page=1" for 127.0.0.1 at 2019-06-06 11:09:16 +0300
+Processing by StaffsController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 2]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 42ms (Views: 37.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/staffs/10" for 127.0.0.1 at 2019-06-06 11:09:20 +0300
+Processing by StaffsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nVCeOj5RktNg0t47WD6sMKWAhOUU4I8E+4mxe9bjKljf+l6uKS6WtDIhbqXGQ0exGn222xxmPDNc+Pxepy/ywg==", "id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/staffs_controller.rb:158
+  [1m[36minsert (60.3ms)[0m  [1m[31mDELETE FROM staffs WHERE id = ?;[0m  [[nil, "10"]]
+  ↳ app/controllers/staffs_controller.rb:147
+Redirected to http://localhost:3000/staffs
+Completed 302 Found in 69ms (ActiveRecord: 60.8ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 11:09:20 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.3ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 43ms (Views: 37.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/staffs/4?api=true" for ::1 at 2019-06-06 11:11:37 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaffsController#destroy as */*
+  Parameters: {"api"=>"true", "id"=>"4"}
+Completed 401 Unauthorized in 21ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-06-06 11:11:37 +0300
+Processing by Devise::SessionsController#new as */*
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 240ms (Views: 212.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 11:11:42 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.3ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 38ms (Views: 30.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 11:11:44 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.3ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 41ms (Views: 35.3ms | ActiveRecord: 0.7ms)
+
+
