@@ -54,14 +54,6 @@ class FacilitiesController < ApplicationController
              WHERE fac.Id = ?"
     @scps = ActiveRecord::Base.connection.exec_query(query, "scp query", vals)
     @staff = []
-    if(params[:api])
-      render json: { 
-             "name" => @facility["name"],
-             "capacity" => @facility["capacity"],
-             "Anomaly class" => @facility["AnomalyClass"]
-          }.to_json, status: 200
-      return
-    end
 
     query = "SELECT st.name, st.id
              FROM staffs st
@@ -69,8 +61,17 @@ class FacilitiesController < ApplicationController
              WHERE fac.Id = ?"
    @staff = ActiveRecord::Base.connection.exec_query(query, "staff query", vals)
 
-    puts @staff
-    
+   if(params[:api])
+      render json: { 
+             "name" => @facility["name"],
+             "capacity" => @facility["capacity"],
+             "Anomaly class" => @facility["AnomalyClass"],
+             "scps" => @scps.map { |sc| sc["Name"] },
+             "staff" => @staff.map { |st| st["name"]}
+          }.to_json, status: 200
+      return
+    end
+
   end
 
   # GET /facilities/new
@@ -128,6 +129,7 @@ class FacilitiesController < ApplicationController
     else
     name = params[:facility][:name]
     capacity = params[:facility][:capacity]
+    anomaly_class = params[:anomaly_class]
       
     end
     
