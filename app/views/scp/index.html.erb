@@ -12,3 +12,7 @@
 
 <br>
 <%= link_to 'New SCP', controller: "scp", action: "create" %>
+
+<%= button_to "Prev", scp_path(), method: :get, params:  {"page": [@page-1, 0].max, "limit": @limit} %>
+<%= @page + 1 %> / <%= @total_pages %>
+<%= button_to "Next", scp_path(), method: :get, params:  {"page": [@page+1, @total_pages-1].min,"limit": @limit}%>

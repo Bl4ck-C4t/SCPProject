@@ -12,22 +12,27 @@ class StaffsController < ApplicationController
   # GET /staffs.json
   def index
     id = params[:id]
-    if(params["page"])
-      page = params["page"]
-    else
-      page = 0
-    end
-
     if(params["limit"])
-      limit = params["limit"]
+      @limit = params["limit"].to_i
     else
-      limit = 2
+      @limit = 2
     end
 
+    pages_query = "SELECT COUNT(staffs.name) as count
+                   FROM staffs"
+    facility_count = ActiveRecord::Base.connection.execute(pages_query)
+    @total_pages = (facility_count[0]["count"].to_f / @limit).ceil
+
+    if(params["page"])
+      @page = [params["page"].to_i, @total_pages-1].min
+    else
+      @page = 0
+    end
+    
     query = "SELECT * FROM staffs LIMIT ? OFFSET ?"
-    # query2 = "SELECT * FROM facilities"
+    # query2 = "SELECT * FROM staffs"
     # @facilities2 = Facility.find_by_sql(query2)
-    vals = [[nil, limit], [nil, page.to_i*limit]]
+    vals = [[nil, @limit], [nil, @page*@limit]]
     @staffs = ActiveRecord::Base.connection.exec_query(query, "all staffs", vals)
   end
 
@@ -36,7 +41,7 @@ class StaffsController < ApplicationController
   def show
     id = params[:id]
 
-    query = " SELECT staffs.id, staffs.age, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+    query = " SELECT staffs.id, staffs.age, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName, staffs.facilityId 
               FROM staffs
               INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
               INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
@@ -44,8 +49,8 @@ class StaffsController < ApplicationController
               WHERE staffs.id = ?;"
 
     vals = [[nil, id]]
-
     @staff = ActiveRecord::Base.connection.exec_insert(query, "show", vals)[0]
+    puts @staff
 
     if(params[:api])
       render json: { 
