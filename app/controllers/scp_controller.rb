@@ -1,28 +1,7 @@
 class ScpController < ApplicationController
   def index
     id = params[:id]
-    if(params["limit"])
-      @limit = params["limit"].to_i
-    else
-      @limit = 4
-    end
-
-    pages_query = "SELECT COUNT(SCP.Name) as count
-                   FROM SCP"
-    facility_count = ActiveRecord::Base.connection.execute(pages_query)
-    @total_pages = (facility_count[0]["count"].to_f / @limit).ceil
-
-    if(params["page"])
-      @page = [params["page"].to_i, @total_pages-1].min
-    else
-      @page = 0
-    end
-    
-    query = "SELECT Id, Name FROM SCP LIMIT ? OFFSET ?"
-    # query2 = "SELECT * FROM staffs"
-    # @facilities2 = Facility.find_by_sql(query2)
-    vals = [[nil, @limit], [nil, @page*@limit]]
-    @scps = ActiveRecord::Base.connection.exec_query(query, "all staffs", vals)
+    @scps = pagination("SCP", "SCP.Name")
   end
 
 

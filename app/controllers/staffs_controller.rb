@@ -12,28 +12,7 @@ class StaffsController < ApplicationController
   # GET /staffs.json
   def index
     id = params[:id]
-    if(params["limit"])
-      @limit = params["limit"].to_i
-    else
-      @limit = 2
-    end
-
-    pages_query = "SELECT COUNT(staffs.name) as count
-                   FROM staffs"
-    facility_count = ActiveRecord::Base.connection.execute(pages_query)
-    @total_pages = (facility_count[0]["count"].to_f / @limit).ceil
-
-    if(params["page"])
-      @page = [params["page"].to_i, @total_pages-1].min
-    else
-      @page = 0
-    end
-    
-    query = "SELECT * FROM staffs LIMIT ? OFFSET ?"
-    # query2 = "SELECT * FROM staffs"
-    # @facilities2 = Facility.find_by_sql(query2)
-    vals = [[nil, @limit], [nil, @page*@limit]]
-    @staffs = ActiveRecord::Base.connection.exec_query(query, "all staffs", vals)
+    @staffs = pagination("staffs", "staffs.name")
   end
 
   # GET /staffs/1
