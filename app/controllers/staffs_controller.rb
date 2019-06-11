@@ -20,11 +20,12 @@ class StaffsController < ApplicationController
   def show
     id = params[:id]
 
-    query = " SELECT staffs.id, staffs.age, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName, staffs.facilityId 
+    query = " SELECT staffs.id, staffs.age, staffs.name, staffs.positionId, 
+      sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName, staffs.facilityId 
               FROM staffs
               INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
               INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
-	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+	            INNER JOIN facilities f ON f.Id = staffs.facilityId
               WHERE staffs.id = ?;"
 
     vals = [[nil, id]]

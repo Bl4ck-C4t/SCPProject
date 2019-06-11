@@ -12,6 +12,23 @@ class FacilitiesController < ApplicationController
   def index
     id = params[:id]
     @facilities = pagination("facilities", "facilities.Name")
+      if(params[:api])
+        js = []
+        @facilities.each do |fac|
+          puts fac
+          js.push(
+            { 
+                 "name" => fac["name"],
+                 "capacity" => fac["capacity"],
+                 "Id" => fac["id"]
+              })
+          
+          
+        end
+        render json: { 
+                 "facilities" => js
+              }.to_json, status: 200
+    end
       # puts @facilities[0]["id"]
   end
 
@@ -19,7 +36,6 @@ class FacilitiesController < ApplicationController
   # GET /facilities/1.json
   def show
     id = params[:id]
-
     query = "SELECT fac.name, fac.capacity, ac.Name as AnomalyClass 
              FROM facilities fac
              INNER JOIN AnomalyClass ac ON ac.Id = fac.ClassId
@@ -32,7 +48,7 @@ class FacilitiesController < ApplicationController
              INNER JOIN facilities fac ON fac.Id = sc.FacilityContainedId
              WHERE fac.Id = ?"
     @scps = ActiveRecord::Base.connection.exec_query(query, "scp query", vals)
-    @staff = []
+    # @staff = []
 
     query = "SELECT st.name, st.id
              FROM staffs st
@@ -90,8 +106,12 @@ class FacilitiesController < ApplicationController
       #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
       vals = [[nil, name], [nil, capacity], [nil, anomaly_class]]
     result = ActiveRecord::Base.connection.exec_insert(query, "insert facility", vals)
+    query = "SELECT last_insert_rowid() as last" 
+    id = ActiveRecord::Base.connection.exec_query(query, "insert facility", [])
+    id_to_return = id[0]["last"]
+    ur = request.original_url
     if(params["api"])
-      head :created, location: "Somewhere"
+      head :created, location: ur[0, ur.index("?")] + "/" + id_to_return.to_s
       return
     else
       redirect_to facilities_path()
