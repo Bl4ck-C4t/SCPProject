@@ -31,3 +31,8 @@
 <%= link_to 'New Staff', new_staff_path %>
 
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+
+<%= button_to "Prev", staffs_path(), method: :get, params:  {"page": [@page-1, 0].max, "limit": @limit} %>
+<%= @page + 1 %> / <%= @total_pages %>
+<%= button_to "Next", staffs_path(), method: :get, params:  {"page": [@page+1, @total_pages-1].min,"limit": @limit}%>
+

@@ -9,23 +9,7 @@ class StaffsController < ApplicationController
   # GET /staffs.json
   def index
     id = params[:id]
-    if(params["page"])
-      page = params["page"]
-    else
-      page = 0
-    end
-
-    if(params["limit"])
-      limit = params["limit"]
-    else
-      limit = 2
-    end
-
-    query = "SELECT * FROM staffs LIMIT ? OFFSET ?"
-    # query2 = "SELECT * FROM facilities"
-    # @facilities2 = Facility.find_by_sql(query2)
-    vals = [[nil, limit], [nil, page.to_i*limit]]
-    @staffs = ActiveRecord::Base.connection.exec_query(query, "all staffs", vals)
+    @staffs = pagination("staffs", "staffs.name")
   end
 
   # GET /staffs/1
@@ -33,16 +17,17 @@ class StaffsController < ApplicationController
   def show
     id = params[:id]
 
-    query = " SELECT staffs.id, staffs.age, staffs.name, staffs.positionId, sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName 
+    query = " SELECT staffs.id, staffs.age, staffs.name, staffs.positionId, 
+      sc.Name AS SecurityClearance, pc.PositionName AS PositionClearance, f.name as FacilityName, staffs.facilityId 
               FROM staffs
               INNER JOIN PositionClearance pc ON pc.PositionId = staffs.positionId
               INNER JOIN SecurityClearance sc ON sc.Level = pc.ClearanceLevel
-	      INNER JOIN facilities f ON f.Id = staffs.facilityId
+	            INNER JOIN facilities f ON f.Id = staffs.facilityId
               WHERE staffs.id = ?;"
 
     vals = [[nil, id]]
-
     @staff = ActiveRecord::Base.connection.exec_insert(query, "show", vals)[0]
+    puts @staff
 
     if(params[:api])
       render json: { 

@@ -21,7 +21,8 @@
 
 <p>
   <strong>Facility:</strong>
-  <%= @staff["FacilityName"] %>
+  <%= link_to @staff["FacilityName"], controller: "facilities", action: "show", id: @staff["FacilityId"] %>
+
 </p>
 
 

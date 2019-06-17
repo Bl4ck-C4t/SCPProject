@@ -1,7 +1,7 @@
 class ScpController < ApplicationController
   def index
-    query = "SELECT Id, Name FROM SCP;"
-    @scps = ActiveRecord::Base.connection.execute(query)
+    id = params[:id]
+    @scps = pagination("SCP", "SCP.Name")
   end
 
 

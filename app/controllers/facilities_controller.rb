@@ -11,28 +11,24 @@ class FacilitiesController < ApplicationController
 
   def index
     id = params[:id]
-    if(params["limit"])
-      @limit = params["limit"].to_i
-    else
-      @limit = 2
+    @facilities = pagination("facilities", "facilities.Name")
+      if(params[:api])
+        js = []
+        @facilities.each do |fac|
+          puts fac
+          js.push(
+            { 
+                 "name" => fac["name"],
+                 "capacity" => fac["capacity"],
+                 "Id" => fac["id"]
+              })
+          
+          
+        end
+        render json: { 
+                 "facilities" => js
+              }.to_json, status: 200
     end
-
-    pages_query = "SELECT COUNT(facilities.Name) as count
-                   FROM facilities"
-    facility_count = ActiveRecord::Base.connection.execute(pages_query)
-    @total_pages = (facility_count[0]["count"].to_f / @limit).ceil
-
-    if(params["page"])
-      @page = [params["page"].to_i, @total_pages-1].min
-    else
-      @page = 0
-    end
-    
-    query = "SELECT * FROM facilities LIMIT ? OFFSET ?"
-    # query2 = "SELECT * FROM facilities"
-    # @facilities2 = Facility.find_by_sql(query2)
-    vals = [[nil, @limit], [nil, @page*@limit]]
-    @facilities = ActiveRecord::Base.connection.exec_query(query, "all facilities", vals)
       # puts @facilities[0]["id"]
   end
 
@@ -40,7 +36,6 @@ class FacilitiesController < ApplicationController
   # GET /facilities/1.json
   def show
     id = params[:id]
-
     query = "SELECT fac.name, fac.capacity, ac.Name as AnomalyClass 
              FROM facilities fac
              INNER JOIN AnomalyClass ac ON ac.Id = fac.ClassId
@@ -53,7 +48,7 @@ class FacilitiesController < ApplicationController
              INNER JOIN facilities fac ON fac.Id = sc.FacilityContainedId
              WHERE fac.Id = ?"
     @scps = ActiveRecord::Base.connection.exec_query(query, "scp query", vals)
-    @staff = []
+    # @staff = []
 
     query = "SELECT st.name, st.id
              FROM staffs st
@@ -111,8 +106,12 @@ class FacilitiesController < ApplicationController
       #   Relation::QueryAttribute.new("String", position, Type::Value.new)]
       vals = [[nil, name], [nil, capacity], [nil, anomaly_class]]
     result = ActiveRecord::Base.connection.exec_insert(query, "insert facility", vals)
+    query = "SELECT last_insert_rowid() as last" 
+    id = ActiveRecord::Base.connection.exec_query(query, "insert facility", [])
+    id_to_return = id[0]["last"]
+    ur = request.original_url
     if(params["api"])
-      head :created, location: "Somewhere"
+      head :created, location: ur[0, ur.index("?")] + "/" + id_to_return.to_s
       return
     else
       redirect_to facilities_path()
