@@ -9947,3 +9947,873 @@ Processing by StaffsController#index as HTML
 Completed 200 OK in 41ms (Views: 35.3ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-06-06 13:04:17 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (11.4ms)
+Completed 200 OK in 31ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/scp" for 127.0.0.1 at 2019-06-06 13:04:23 +0300
+Processing by ScpController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT Id, Name FROM SCP;[0m
+  ↳ app/controllers/scp_controller.rb:4
+  Rendering scp/index.html.erb within layouts/application
+  Rendered scp/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 213ms (Views: 198.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/facilities" for 127.0.0.1 at 2019-06-06 13:04:30 +0300
+Processing by FacilitiesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(facilities.Name) as count
+                   FROM facilities[0m
+  ↳ app/controllers/facilities_controller.rb:22
+  [1m[36mall facilities (0.3ms)[0m  [1m[34mSELECT * FROM facilities LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/facilities_controller.rb:35
+  Rendering facilities/index.html.erb within layouts/application
+  Rendered facilities/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 63ms (Views: 59.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/facilities?page=1" for 127.0.0.1 at 2019-06-06 13:04:34 +0300
+Processing by FacilitiesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(facilities.Name) as count
+                   FROM facilities[0m
+  ↳ app/controllers/facilities_controller.rb:22
+  [1m[36mall facilities (0.3ms)[0m  [1m[34mSELECT * FROM facilities LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 2]]
+  ↳ app/controllers/facilities_controller.rb:35
+  Rendering facilities/index.html.erb within layouts/application
+  Rendered facilities/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/facilities?page=2" for 127.0.0.1 at 2019-06-06 13:04:36 +0300
+Processing by FacilitiesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(facilities.Name) as count
+                   FROM facilities[0m
+  ↳ app/controllers/facilities_controller.rb:22
+  [1m[36mall facilities (0.2ms)[0m  [1m[34mSELECT * FROM facilities LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 4]]
+  ↳ app/controllers/facilities_controller.rb:35
+  Rendering facilities/index.html.erb within layouts/application
+  Rendered facilities/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 76ms (Views: 73.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/facilities?page=1" for 127.0.0.1 at 2019-06-06 13:04:37 +0300
+Processing by FacilitiesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(facilities.Name) as count
+                   FROM facilities[0m
+  ↳ app/controllers/facilities_controller.rb:22
+  [1m[36mall facilities (0.2ms)[0m  [1m[34mSELECT * FROM facilities LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 2]]
+  ↳ app/controllers/facilities_controller.rb:35
+  Rendering facilities/index.html.erb within layouts/application
+  Rendered facilities/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 61ms (Views: 56.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-06 13:04:41 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 82ms (Views: 44.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:13:43 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.5ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:31
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1113ms (Views: 1017.8ms | ActiveRecord: 18.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-06-11 15:13:57 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9VtpKRp4eWeNE1AkWpuulQXPJp4WlnlZO+BJuEuI1Rm38am9DQd9AN/g4LrE5kUUujIUoB4Qym6ckQSdOkQNgw=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 272ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-11 15:13:57 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 27ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:14:12 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-06-11 15:14:12 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (67.4ms)
+Completed 200 OK in 134ms (Views: 116.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:25:52 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `root_path' for #<CustomFailure:0x00007f2e8c498b50>):
+  
+lib/custom_failure.rb:3:in `redirect_url'
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:26:52 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `root_path' for #<CustomFailure:0x00005627b9456ac8>):
+  
+lib/custom_failure.rb:3:in `redirect_url'
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:33:53 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:35:07 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:35:08 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:35:34 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:35:35 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:35:35 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:35:35 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:35:35 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:35:35 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:35:35 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:36:05 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:36:21 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:36:34 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:36:35 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:36:35 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:36:35 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:36:35 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:36:35 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:36:35 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:36:36 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:36:36 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:37:43 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:37:44 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:37:45 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:37:45 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:37:45 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:37:46 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:37:46 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:37:47 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:38:25 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:38:26 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:38:27 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:38:27 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:40:56 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:41:09 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:41:10 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/" for 127.0.0.1 at 2019-06-11 15:41:17 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:43:26 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:43:55 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:43:57 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:43:57 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:43:57 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:43:57 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:43:57 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:44:02 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:46:22 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:47:57 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:47:58 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:47:58 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:47:58 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:47:58 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:47:59 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:47:59 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:47:59 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:49:06 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started POST "/__web_console/repl_sessions/82214ecab1f197b54aa5ae4bdd459c14/trace" for 127.0.0.1 at 2019-06-11 15:49:31 +0300
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:50:51 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:50:52 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:50:52 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:50:52 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-11 15:50:52 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+lib/custom_failure.rb:10:in `respond'
+Started GET "/staffs" for 127.0.0.1 at 2019-06-17 23:52:34 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 34ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-17 23:52:36 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-17 23:52:52 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (10.0ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-17 23:52:56 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-17 23:54:08 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for ::1 at 2019-06-17 23:55:35 +0300
+Processing by StaffsController#index as */*
+  Parameters: {"name"=>"building"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for ::1 at 2019-06-17 23:55:46 +0300
+Processing by StaffsController#index as */*
+  Parameters: {"name"=>"building"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for ::1 at 2019-06-17 23:55:52 +0300
+Processing by StaffsController#index as */*
+  Parameters: {"name"=>"building"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs/sign_in" for 127.0.0.1 at 2019-06-17 23:56:42 +0300
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"sign_in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-06-17 23:57:01 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (349.5ms)
+Completed 200 OK in 1323ms (Views: 1296.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-06-17 23:57:13 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0xB53R57b0oGhcZRzcohjHkEPKMvpQf9Ohs/LB1jJvBhjJZVfhZ1Bjbmk87Hz1m7Yi8gU/s26rrY0vD4+FVjWg==", "user"=>{"email"=>"tonipelovski@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (58.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tonipelovski@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 299ms (ActiveRecord: 58.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-17 23:57:16 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-17 23:57:19 +0300
+Processing by StaffsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-06-17 23:57:27 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 64ms (Views: 62.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-06-17 23:57:38 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zrzyhYgguCgSLIos5SYi6uIeU+54LcuCyIifxakPEvN8IB0N6E2iZCJP37PvI1rd+TVPHqy+JsUqQVARTDlXWQ==", "user"=>{"email"=>"toni_pelovski@abv.bg", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "toni_pelovski@abv.bg"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (17.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "xJ1T7EHVuytSu1RZJYTE"]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "authentication_token") VALUES (?, ?, ?, ?, ?)[0m  [["email", "toni_pelovski@abv.bg"], ["encrypted_password", "$2a$11$68nt5SjFt3/r6Z.M9x0cleV6xRDm1dRHlOYkOIAPMbBdS/ii1.BJi"], ["created_at", "2019-06-17 20:57:38.960806"], ["updated_at", "2019-06-17 20:57:38.960806"], ["authentication_token", "xJ1T7EHVuytSu1RZJYTE"]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (62.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 288ms (ActiveRecord: 81.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-17 23:57:39 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2019-06-17 23:57:43 +0300
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.5ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:28
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 50ms (Views: 32.3ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-06-17 23:57:47 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"b0mW6Dp5Kb4PlWq2SVOcl+gPYGuBPzeB4ffuX5JFFSvd1XlgWhQz8j/2PylDVuSg8yR8m1Ws2sYDPiGLd3NQgQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 56ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-17 23:57:47 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/theking/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for ::1 at 2019-06-17 23:58:29 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaffsController#index as */*
+  Parameters: {"name"=>"building"}
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for ::1 at 2019-06-18 00:00:38 +0300
+Processing by StaffsController#index as */*
+  Parameters: {"name"=>"building"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "toni_pelovski@abv.bg"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 47ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/staffs" for ::1 at 2019-06-18 00:02:09 +0300
+Processing by StaffsController#index as */*
+  Parameters: {"name"=>"building"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "toni_pelovski@abv.bg"], ["LIMIT", 1]]
+  ↳ /home/theking/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mall staffs (0.4ms)[0m  [1m[34mSELECT * FROM staffs LIMIT ? OFFSET ?[0m  [[nil, 2], [nil, 0]]
+  ↳ app/controllers/staffs_controller.rb:28
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 340ms (Views: 309.6ms | ActiveRecord: 0.7ms)
+
+

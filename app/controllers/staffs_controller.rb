@@ -1,12 +1,9 @@
 
 class StaffsController < ApplicationController
-  acts_as_token_authentication_handler_for User, fallback: :permission_denied
+  acts_as_token_authentication_handler_for User
   before_action :set_staff, only: [:show, :edit, :update, :destroy] 
   skip_before_action :verify_authenticity_token 
 
-  def permission_denied
-    redirect_to(root_path, status: 401)
-  end
 
   # GET /staffs
   # GET /staffs.json
